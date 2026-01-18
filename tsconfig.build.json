@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "gro/*": ["./dist/src/*"],
-      "gro": ["./dist/src/index.ts"]
+      "gro-typescript/*": ["./dist/src/*"],
+      "gro-typescript": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

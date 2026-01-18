@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'gro/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'gro-typescript/internal/utils/path';
 import { inspect } from 'node:util';
 import { runInNewContext } from 'node:vm';
 

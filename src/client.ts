@@ -16,8 +16,6 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { APIJson, APIJsonRetrieveResponse } from './resources/api-json';
-import { APIYaml, APIYamlRetrieveResponse } from './resources/api-yaml';
 import { API as ApiapiAPI, APIRetrieveResponse } from './resources/api/api';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -752,20 +750,12 @@ export class Gro {
   static toFile = Uploads.toFile;
 
   api: API.API = new API.API(this);
-  apiJson: API.APIJson = new API.APIJson(this);
-  apiYaml: API.APIYaml = new API.APIYaml(this);
 }
 
 Gro.API = ApiapiAPI;
-Gro.APIJson = APIJson;
-Gro.APIYaml = APIYaml;
 
 export declare namespace Gro {
   export type RequestOptions = Opts.RequestOptions;
 
   export { ApiapiAPI as API, type APIRetrieveResponse as APIRetrieveResponse };
-
-  export { APIJson as APIJson, type APIJsonRetrieveResponse as APIJsonRetrieveResponse };
-
-  export { APIYaml as APIYaml, type APIYamlRetrieveResponse as APIYamlRetrieveResponse };
 }

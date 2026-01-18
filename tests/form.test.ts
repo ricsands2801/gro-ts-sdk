@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'gro/internal/uploads';
-import { toFile } from 'gro/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'gro-typescript/internal/uploads';
+import { toFile } from 'gro-typescript/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

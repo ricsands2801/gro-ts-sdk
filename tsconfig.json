@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "gro/*": ["./src/*"],
-      "gro": ["./src/index.ts"]
+      "gro-typescript/*": ["./src/*"],
+      "gro-typescript": ["./src/index.ts"]
     },
     "noEmit": true,
 

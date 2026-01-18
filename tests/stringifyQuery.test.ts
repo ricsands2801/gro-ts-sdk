@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Gro } from 'gro';
+import { Gro } from 'gro-typescript';
 
 const { stringifyQuery } = Gro.prototype as any;
 

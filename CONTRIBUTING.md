@@ -55,12 +55,12 @@ $ cd gro-typescript
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link gro
+$ yarn link gro-typescript
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global gro
+$ pnpm link -—global gro-typescript
 ```
 
 ## Running tests

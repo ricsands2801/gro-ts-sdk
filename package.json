@@ -1,6 +1,6 @@
 {
   "name": "gro-typescript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The official TypeScript library for the Gro API",
   "author": "Gro <support@usegro.co>",
   "types": "dist/index.d.ts",

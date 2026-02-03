@@ -13,6 +13,8 @@ import {
   ProfileUpdateResponse,
   Profiles,
 } from './profiles';
+import * as PublicAPI from './public/public';
+import { Public } from './public/public';
 import * as SubscriptionsAPI from './subscriptions/subscriptions';
 import { Subscriptions } from './subscriptions/subscriptions';
 import { APIPromise } from '../../core/api-promise';
@@ -22,9 +24,15 @@ import { RequestOptions } from '../../internal/request-options';
 export class API extends APIResource {
   profiles: ProfilesAPI.Profiles = new ProfilesAPI.Profiles(this._client);
   subscriptions: SubscriptionsAPI.Subscriptions = new SubscriptionsAPI.Subscriptions(this._client);
+  public: PublicAPI.Public = new PublicAPI.Public(this._client);
 
   /**
    * Displays the OpenAPI documentation UI.
+   *
+   * @example
+   * ```ts
+   * const api = await client.api.retrieve();
+   * ```
    */
   retrieve(options?: RequestOptions): APIPromise<string> {
     return this._client.get('/api', {
@@ -38,6 +46,7 @@ export type APIRetrieveResponse = string;
 
 API.Profiles = Profiles;
 API.Subscriptions = Subscriptions;
+API.Public = Public;
 
 export declare namespace API {
   export { type APIRetrieveResponse as APIRetrieveResponse };
@@ -55,4 +64,6 @@ export declare namespace API {
   };
 
   export { Subscriptions as Subscriptions };
+
+  export { Public as Public };
 }

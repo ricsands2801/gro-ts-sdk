@@ -9,6 +9,16 @@ import { path } from '../../../internal/utils/path';
 export class Entities extends APIResource {
   /**
    * Create a new entity
+   *
+   * @example
+   * ```ts
+   * const entity =
+   *   await client.api.subscriptions.entities.create({
+   *     entity_type: 'entity_type',
+   *     name: 'name',
+   *     profile_id: 'profile_id',
+   *   });
+   * ```
    */
   create(body: EntityCreateParams, options?: RequestOptions): APIPromise<EntityCreateResponse> {
     return this._client.post('/api/subscriptions/entities', { body, ...options });
@@ -16,6 +26,12 @@ export class Entities extends APIResource {
 
   /**
    * Get an entity
+   *
+   * @example
+   * ```ts
+   * const entity =
+   *   await client.api.subscriptions.entities.retrieve('id');
+   * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<EntityRetrieveResponse> {
     return this._client.get(path`/api/subscriptions/entities/${id}`, options);
@@ -23,6 +39,12 @@ export class Entities extends APIResource {
 
   /**
    * Update an entity
+   *
+   * @example
+   * ```ts
+   * const entity =
+   *   await client.api.subscriptions.entities.update('id');
+   * ```
    */
   update(
     id: string,
@@ -34,6 +56,12 @@ export class Entities extends APIResource {
 
   /**
    * List all entities
+   *
+   * @example
+   * ```ts
+   * const entities =
+   *   await client.api.subscriptions.entities.list();
+   * ```
    */
   list(
     query: EntityListParams | null | undefined = {},
@@ -44,6 +72,11 @@ export class Entities extends APIResource {
 
   /**
    * Delete an entity
+   *
+   * @example
+   * ```ts
+   * await client.api.subscriptions.entities.delete('id');
+   * ```
    */
   delete(id: string, options?: RequestOptions): APIPromise<void> {
     return this._client.delete(path`/api/subscriptions/entities/${id}`, {

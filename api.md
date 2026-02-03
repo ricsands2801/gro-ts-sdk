@@ -46,3 +46,30 @@ Methods:
 - <code title="put /api/subscriptions/entities/{id}">client.api.subscriptions.entities.<a href="./src/resources/api/subscriptions/entities.ts">update</a>(id, { ...params }) -> EntityUpdateResponse</code>
 - <code title="get /api/subscriptions/entities">client.api.subscriptions.entities.<a href="./src/resources/api/subscriptions/entities.ts">list</a>({ ...params }) -> EntityListResponse</code>
 - <code title="delete /api/subscriptions/entities/{id}">client.api.subscriptions.entities.<a href="./src/resources/api/subscriptions/entities.ts">delete</a>(id) -> void</code>
+
+### Reports
+
+Methods:
+
+- <code title="get /api/subscriptions/reports/cancellation-reasons">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveCancellationReasons</a>() -> void</code>
+- <code title="get /api/subscriptions/reports/growth">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveGrowth</a>() -> void</code>
+- <code title="get /api/subscriptions/reports/product-revenue">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveProductRevenue</a>() -> void</code>
+- <code title="get /api/subscriptions/reports/stats">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveStats</a>() -> void</code>
+
+## Public
+
+### Delivery
+
+Types:
+
+- <code><a href="./src/resources/api/public/delivery.ts">DeliveryGetOptionsResponse</a></code>
+- <code><a href="./src/resources/api/public/delivery.ts">DeliveryListCountriesResponse</a></code>
+- <code><a href="./src/resources/api/public/delivery.ts">DeliveryLookupOptionsResponse</a></code>
+- <code><a href="./src/resources/api/public/delivery.ts">DeliveryValidateSelectionResponse</a></code>
+
+Methods:
+
+- <code title="get /api/public/delivery/options">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">getOptions</a>({ ...params }) -> DeliveryGetOptionsResponse</code>
+- <code title="get /api/public/delivery/countries">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">listCountries</a>() -> unknown</code>
+- <code title="get /api/public/delivery/lookup">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">lookupOptions</a>({ ...params }) -> DeliveryLookupOptionsResponse</code>
+- <code title="post /api/public/delivery/validate">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">validateSelection</a>({ ...params }) -> unknown</code>

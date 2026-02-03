@@ -12,4 +12,5 @@ export {
   type ProfileUpdateParams,
   type ProfileListParams,
 } from './profiles';
+export { Public } from './public/index';
 export { Subscriptions } from './subscriptions/index';

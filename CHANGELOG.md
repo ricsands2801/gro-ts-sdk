@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.1 (2026-02-03)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.1.0...v0.1.1)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([f684f8d](https://github.com/ricsands2801/gro-ts-sdk/commit/f684f8d42ac5186b30ee5fbeaa0a1993d80dec9e))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([44d5682](https://github.com/ricsands2801/gro-ts-sdk/commit/44d568226ed41f47f895ada3266b5b47fc6263e3))
+* **client:** do not parse responses with empty content-length ([68388b2](https://github.com/ricsands2801/gro-ts-sdk/commit/68388b235f356e27279209d6476b6386fa020b03))
+
 ## 0.1.0 (2026-01-18)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.0.1...v0.1.0)

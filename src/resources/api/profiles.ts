@@ -9,6 +9,13 @@ import { path } from '../../internal/utils/path';
 export class Profiles extends APIResource {
   /**
    * Create a new profile
+   *
+   * @example
+   * ```ts
+   * const profile = await client.api.profiles.create({
+   *   email: 'email',
+   * });
+   * ```
    */
   create(body: ProfileCreateParams, options?: RequestOptions): APIPromise<ProfileCreateResponse> {
     return this._client.post('/api/profiles', { body, ...options });
@@ -16,6 +23,11 @@ export class Profiles extends APIResource {
 
   /**
    * Get a profile
+   *
+   * @example
+   * ```ts
+   * const profile = await client.api.profiles.retrieve('id');
+   * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<ProfileRetrieveResponse> {
     return this._client.get(path`/api/profiles/${id}`, options);
@@ -23,6 +35,11 @@ export class Profiles extends APIResource {
 
   /**
    * Update a profile
+   *
+   * @example
+   * ```ts
+   * const profile = await client.api.profiles.update('id');
+   * ```
    */
   update(
     id: string,
@@ -34,6 +51,11 @@ export class Profiles extends APIResource {
 
   /**
    * List all profiles
+   *
+   * @example
+   * ```ts
+   * const profiles = await client.api.profiles.list();
+   * ```
    */
   list(
     query: ProfileListParams | null | undefined = {},
@@ -44,6 +66,11 @@ export class Profiles extends APIResource {
 
   /**
    * Delete a profile
+   *
+   * @example
+   * ```ts
+   * await client.api.profiles.delete('id');
+   * ```
    */
   delete(id: string, options?: RequestOptions): APIPromise<void> {
     return this._client.delete(path`/api/profiles/${id}`, {
@@ -54,6 +81,11 @@ export class Profiles extends APIResource {
 
   /**
    * Get profile activity timeline
+   *
+   * @example
+   * ```ts
+   * await client.api.profiles.activity('id');
+   * ```
    */
   activity(id: string, options?: RequestOptions): APIPromise<void> {
     return this._client.get(path`/api/profiles/${id}/activity`, {
@@ -64,6 +96,11 @@ export class Profiles extends APIResource {
 
   /**
    * Bulk upload profiles
+   *
+   * @example
+   * ```ts
+   * const response = await client.api.profiles.bulkUpload();
+   * ```
    */
   bulkUpload(options?: RequestOptions): APIPromise<ProfileBulkUploadResponse> {
     return this._client.post('/api/profiles/bulk-upload', options);

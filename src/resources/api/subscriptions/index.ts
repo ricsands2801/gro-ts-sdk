@@ -10,4 +10,5 @@ export {
   type EntityUpdateParams,
   type EntityListParams,
 } from './entities';
+export { Reports } from './reports';
 export { Subscriptions } from './subscriptions';

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.1 (2026-02-06)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.2.0...v0.2.1)
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([58b48f2](https://github.com/ricsands2801/gro-ts-sdk/commit/58b48f2e4e622cb72cd24b162fab3c70a56939ab))
+
+
+### Chores
+
+* **client:** restructure abort controller binding ([167134a](https://github.com/ricsands2801/gro-ts-sdk/commit/167134ae845be6e5522f13c4fce022299e60e905))
+* **internal:** upgrade pnpm ([3db4220](https://github.com/ricsands2801/gro-ts-sdk/commit/3db4220d7a9b4515c11c641b6f40d1fd8c4e791d))
+
 ## 0.2.0 (2026-02-03)
 
 Full Changelog: [v0.1.1...v0.2.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.1.1...v0.2.0)

@@ -8,7 +8,7 @@ const client = new Gro({
 });
 
 describe('resource reports', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieveCancellationReasons', async () => {
     const responsePromise = client.api.subscriptions.reports.retrieveCancellationReasons();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource reports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieveGrowth', async () => {
     const responsePromise = client.api.subscriptions.reports.retrieveGrowth();
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource reports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieveProductRevenue', async () => {
     const responsePromise = client.api.subscriptions.reports.retrieveProductRevenue();
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource reports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieveStats', async () => {
     const responsePromise = client.api.subscriptions.reports.retrieveStats();
     const rawResponse = await responsePromise.asResponse();

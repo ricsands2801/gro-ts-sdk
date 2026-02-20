@@ -1,6 +1,6 @@
 {
   "name": "gro-typescript",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The official TypeScript library for the Gro API",
   "author": "Gro <support@usegro.co>",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
   "type": "commonjs",
   "repository": "github:ricsands2801/gro-ts-sdk",
   "license": "Apache-2.0",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.27.0",
   "files": [
     "**/*"
   ],

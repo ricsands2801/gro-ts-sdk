@@ -174,9 +174,6 @@ export interface DeliveryGetOptionsParams {
 export interface DeliveryLookupOptionsParams {
   country_code: string;
 
-  /**
-   * Shopify shop domain
-   */
   shop: string;
 
   postcode?: string;

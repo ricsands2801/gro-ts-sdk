@@ -8,7 +8,7 @@ const client = new Gro({
 });
 
 describe('resource api', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.api.retrieve();
     const rawResponse = await responsePromise.asResponse();

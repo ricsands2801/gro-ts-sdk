@@ -60,7 +60,7 @@ $ yarn link gro-typescript
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global gro-typescript
+$ pnpm link --global gro-typescript
 ```
 
 ## Running tests

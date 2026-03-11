@@ -47,15 +47,6 @@ Methods:
 - <code title="get /api/subscriptions/entities">client.api.subscriptions.entities.<a href="./src/resources/api/subscriptions/entities.ts">list</a>({ ...params }) -> EntityListResponse</code>
 - <code title="delete /api/subscriptions/entities/{id}">client.api.subscriptions.entities.<a href="./src/resources/api/subscriptions/entities.ts">delete</a>(id) -> void</code>
 
-### Reports
-
-Methods:
-
-- <code title="get /api/subscriptions/reports/cancellation-reasons">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveCancellationReasons</a>() -> void</code>
-- <code title="get /api/subscriptions/reports/growth">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveGrowth</a>() -> void</code>
-- <code title="get /api/subscriptions/reports/product-revenue">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveProductRevenue</a>() -> void</code>
-- <code title="get /api/subscriptions/reports/stats">client.api.subscriptions.reports.<a href="./src/resources/api/subscriptions/reports.ts">retrieveStats</a>() -> void</code>
-
 ## Public
 
 ### Delivery

@@ -91,8 +91,6 @@ export interface EntityCreateResponse {
 
   account_id: string;
 
-  attributes: unknown;
-
   entity_type: string;
 
   is_active: boolean;
@@ -100,6 +98,8 @@ export interface EntityCreateResponse {
   name: string;
 
   profile_id: string;
+
+  attributes?: string;
 
   created_at?: string | null;
 
@@ -115,8 +115,6 @@ export interface EntityRetrieveResponse {
 
   account_id: string;
 
-  attributes: unknown;
-
   entity_type: string;
 
   is_active: boolean;
@@ -124,6 +122,8 @@ export interface EntityRetrieveResponse {
   name: string;
 
   profile_id: string;
+
+  attributes?: string;
 
   created_at?: string | null;
 
@@ -139,8 +139,6 @@ export interface EntityUpdateResponse {
 
   account_id: string;
 
-  attributes: unknown;
-
   entity_type: string;
 
   is_active: boolean;
@@ -148,6 +146,8 @@ export interface EntityUpdateResponse {
   name: string;
 
   profile_id: string;
+
+  attributes?: string;
 
   created_at?: string | null;
 
@@ -170,8 +170,6 @@ export namespace EntityListResponse {
 
     account_id: string;
 
-    attributes: unknown;
-
     entity_type: string;
 
     is_active: boolean;
@@ -179,6 +177,8 @@ export namespace EntityListResponse {
     name: string;
 
     profile_id: string;
+
+    attributes?: string;
 
     created_at?: string | null;
 

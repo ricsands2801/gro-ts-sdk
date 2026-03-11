@@ -8,7 +8,7 @@ const client = new Gro({
 });
 
 describe('resource delivery', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getOptions: only required params', async () => {
     const responsePromise = client.api.public.delivery.getOptions({ shop: 'shop' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,12 +20,12 @@ describe('resource delivery', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getOptions: required and optional params', async () => {
     const response = await client.api.public.delivery.getOptions({ shop: 'shop' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listCountries', async () => {
     const responsePromise = client.api.public.delivery.listCountries();
     const rawResponse = await responsePromise.asResponse();
@@ -37,7 +37,7 @@ describe('resource delivery', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('lookupOptions: only required params', async () => {
     const responsePromise = client.api.public.delivery.lookupOptions({
       country_code: 'country_code',
@@ -52,7 +52,7 @@ describe('resource delivery', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('lookupOptions: required and optional params', async () => {
     const response = await client.api.public.delivery.lookupOptions({
       country_code: 'country_code',
@@ -63,7 +63,7 @@ describe('resource delivery', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('validateSelection: only required params', async () => {
     const responsePromise = client.api.public.delivery.validateSelection({
       country_code: 'country_code',
@@ -80,7 +80,7 @@ describe('resource delivery', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('validateSelection: required and optional params', async () => {
     const response = await client.api.public.delivery.validateSelection({
       country_code: 'country_code',

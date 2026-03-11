@@ -12,16 +12,12 @@ import {
   EntityUpdateParams,
   EntityUpdateResponse,
 } from './entities';
-import * as ReportsAPI from './reports';
-import { Reports } from './reports';
 
 export class Subscriptions extends APIResource {
   entities: EntitiesAPI.Entities = new EntitiesAPI.Entities(this._client);
-  reports: ReportsAPI.Reports = new ReportsAPI.Reports(this._client);
 }
 
 Subscriptions.Entities = Entities;
-Subscriptions.Reports = Reports;
 
 export declare namespace Subscriptions {
   export {
@@ -34,6 +30,4 @@ export declare namespace Subscriptions {
     type EntityUpdateParams as EntityUpdateParams,
     type EntityListParams as EntityListParams,
   };
-
-  export { Reports as Reports };
 }

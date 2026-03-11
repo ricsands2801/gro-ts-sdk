@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (2026-03-11)
+
+Full Changelog: [v0.2.1...v0.3.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.2.1...v0.3.0)
+
+### Features
+
+* **api:** manual updates ([db5497e](https://github.com/ricsands2801/gro-ts-sdk/commit/db5497ec59010f4ccca70e5be400a674fe26332d))
+
 ## 0.2.1 (2026-03-10)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.2.0...v0.2.1)

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2026-03-17)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* **internal:** tweak CI branches ([bab736d](https://github.com/ricsands2801/gro-ts-sdk/commit/bab736df3878cfd0c4c22b753657a2baa6ed458d))
+
 ## 0.3.0 (2026-03-11)
 
 Full Changelog: [v0.2.1...v0.3.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.2.1...v0.3.0)

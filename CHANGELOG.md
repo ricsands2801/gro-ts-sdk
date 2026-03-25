@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.1 (2026-03-25)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([188e301](https://github.com/ricsands2801/gro-ts-sdk/commit/188e3016b889b10a9a89b6512828275bd5ea38e1))
+* **internal:** tweak CI branches ([bab736d](https://github.com/ricsands2801/gro-ts-sdk/commit/bab736df3878cfd0c4c22b753657a2baa6ed458d))
+* **internal:** update gitignore ([19316a3](https://github.com/ricsands2801/gro-ts-sdk/commit/19316a35cd445e54981cc3b9d295fdf5fbfb111f))
+
 ## 0.3.0 (2026-03-11)
 
 Full Changelog: [v0.2.1...v0.3.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.2.1...v0.3.0)

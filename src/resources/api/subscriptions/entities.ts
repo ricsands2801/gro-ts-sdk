@@ -46,11 +46,7 @@ export class Entities extends APIResource {
    *   await client.api.subscriptions.entities.update('id');
    * ```
    */
-  update(
-    id: string,
-    body: EntityUpdateParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<EntityUpdateResponse> {
+  update(id: string, body: EntityUpdateParams | null | undefined = {}, options?: RequestOptions): APIPromise<EntityUpdateResponse> {
     return this._client.put(path`/api/subscriptions/entities/${id}`, { body, ...options });
   }
 
@@ -63,10 +59,7 @@ export class Entities extends APIResource {
    *   await client.api.subscriptions.entities.list();
    * ```
    */
-  list(
-    query: EntityListParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<EntityListResponse> {
+  list(query: EntityListParams | null | undefined = {}, options?: RequestOptions): APIPromise<EntityListResponse> {
     return this._client.get('/api/subscriptions/entities', { query, ...options });
   }
 
@@ -79,10 +72,7 @@ export class Entities extends APIResource {
    * ```
    */
   delete(id: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.delete(path`/api/subscriptions/entities/${id}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.delete(path`/api/subscriptions/entities/${id}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -285,6 +275,6 @@ export declare namespace Entities {
     type EntityListResponse as EntityListResponse,
     type EntityCreateParams as EntityCreateParams,
     type EntityUpdateParams as EntityUpdateParams,
-    type EntityListParams as EntityListParams,
+    type EntityListParams as EntityListParams
   };
 }

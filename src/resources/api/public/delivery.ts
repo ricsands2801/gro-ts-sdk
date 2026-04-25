@@ -16,10 +16,7 @@ export class Delivery extends APIResource {
    *   });
    * ```
    */
-  getOptions(
-    query: DeliveryGetOptionsParams,
-    options?: RequestOptions,
-  ): APIPromise<DeliveryGetOptionsResponse> {
+  getOptions(query: DeliveryGetOptionsParams, options?: RequestOptions): APIPromise<DeliveryGetOptionsResponse> {
     return this._client.get('/api/public/delivery/options', { query, ...options });
   }
 
@@ -48,10 +45,7 @@ export class Delivery extends APIResource {
    *   });
    * ```
    */
-  lookupOptions(
-    query: DeliveryLookupOptionsParams,
-    options?: RequestOptions,
-  ): APIPromise<DeliveryLookupOptionsResponse> {
+  lookupOptions(query: DeliveryLookupOptionsParams, options?: RequestOptions): APIPromise<DeliveryLookupOptionsResponse> {
     return this._client.get('/api/public/delivery/lookup', { query, ...options });
   }
 
@@ -70,11 +64,8 @@ export class Delivery extends APIResource {
    * ```
    */
   validateSelection(params: DeliveryValidateSelectionParams, options?: RequestOptions): APIPromise<unknown> {
-    const { country_code, delivery_date, shop, slot_id, postcode, state_code } = params;
-    return this._client.post('/api/public/delivery/validate', {
-      query: { country_code, delivery_date, shop, slot_id, postcode, state_code },
-      ...options,
-    });
+    const { country_code, delivery_date, shop, slot_id, postcode, state_code } = params
+    return this._client.post('/api/public/delivery/validate', { query: { country_code, delivery_date, shop, slot_id, postcode, state_code }, ...options });
   }
 }
 
@@ -108,7 +99,7 @@ export namespace DeliveryGetOptionsResponse {
   }
 }
 
-export type DeliveryListCountriesResponse = unknown;
+export type DeliveryListCountriesResponse = unknown
 
 export interface DeliveryLookupOptionsResponse {
   available: boolean;
@@ -162,7 +153,7 @@ export namespace DeliveryLookupOptionsResponse {
   }
 }
 
-export type DeliveryValidateSelectionResponse = unknown;
+export type DeliveryValidateSelectionResponse = unknown
 
 export interface DeliveryGetOptionsParams {
   /**
@@ -205,6 +196,6 @@ export declare namespace Delivery {
     type DeliveryValidateSelectionResponse as DeliveryValidateSelectionResponse,
     type DeliveryGetOptionsParams as DeliveryGetOptionsParams,
     type DeliveryLookupOptionsParams as DeliveryLookupOptionsParams,
-    type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams,
+    type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams
   };
 }

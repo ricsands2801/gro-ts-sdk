@@ -2,10 +2,7 @@
 
 import Gro from 'gro-typescript';
 
-const client = new Gro({
-  apiKey: 'My API Key',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Gro({ apiKey: 'My API Key', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
 
 describe('resource profiles', () => {
   // Mock server tests are disabled
@@ -23,26 +20,26 @@ describe('resource profiles', () => {
   // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.api.profiles.create({
-      email: 'email',
-      address1: 'address1',
-      address2: 'address2',
-      city: 'city',
-      country: 'country',
-      country_code: 'country_code',
-      created_at: '2019-12-27T18:11:19.117Z',
-      email_status: 'subscribed',
-      external_id: 'external_id',
-      first_name: 'first_name',
-      ip: 'ip',
-      last_name: 'last_name',
-      phone_number: 'phone_number',
-      postal_code: 'postal_code',
-      region: 'region',
-      sms_status: 'subscribed',
-      timezone: 'timezone',
-      title: 'title',
-      updated_at: '2019-12-27T18:11:19.117Z',
-    });
+    email: 'email',
+    address1: 'address1',
+    address2: 'address2',
+    city: 'city',
+    country: 'country',
+    country_code: 'country_code',
+    created_at: '2019-12-27T18:11:19.117Z',
+    email_status: 'subscribed',
+    external_id: 'external_id',
+    first_name: 'first_name',
+    ip: 'ip',
+    last_name: 'last_name',
+    phone_number: 'phone_number',
+    postal_code: 'postal_code',
+    region: 'region',
+    sms_status: 'subscribed',
+    timezone: 'timezone',
+    title: 'title',
+    updated_at: '2019-12-27T18:11:19.117Z',
+  });
   });
 
   // Mock server tests are disabled
@@ -72,31 +69,27 @@ describe('resource profiles', () => {
   // Mock server tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.api.profiles.update(
-        'id',
-        {
-          address1: 'address1',
-          address2: 'address2',
-          city: 'city',
-          country: 'country',
-          country_code: 'country_code',
-          email: 'email',
-          email_status: 'subscribed',
-          external_id: 'external_id',
-          first_name: 'first_name',
-          ip: 'ip',
-          last_name: 'last_name',
-          phone_number: 'phone_number',
-          postal_code: 'postal_code',
-          region: 'region',
-          sms_status: 'subscribed',
-          timezone: 'timezone',
-          title: 'title',
-        },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(Gro.NotFoundError);
+    await expect(client.api.profiles.update('id', {
+    address1: 'address1',
+    address2: 'address2',
+    city: 'city',
+    country: 'country',
+    country_code: 'country_code',
+    email: 'email',
+    email_status: 'subscribed',
+    external_id: 'external_id',
+    first_name: 'first_name',
+    ip: 'ip',
+    last_name: 'last_name',
+    phone_number: 'phone_number',
+    postal_code: 'postal_code',
+    region: 'region',
+    sms_status: 'subscribed',
+    timezone: 'timezone',
+    title: 'title',
+  }, { path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Gro.NotFoundError);
   });
 
   // Mock server tests are disabled
@@ -114,18 +107,15 @@ describe('resource profiles', () => {
   // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.api.profiles.list(
-        {
-          email: 'email',
-          email_status: 'subscribed',
-          limit: 0,
-          page: 0,
-          shopify_customer_id: 'shopify_customer_id',
-        },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(Gro.NotFoundError);
+    await expect(client.api.profiles.list({
+    email: 'email',
+    email_status: 'subscribed',
+    limit: 0,
+    page: 0,
+    shopify_customer_id: 'shopify_customer_id',
+  }, { path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Gro.NotFoundError);
   });
 
   // Mock server tests are disabled

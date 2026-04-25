@@ -41,11 +41,7 @@ export class Profiles extends APIResource {
    * const profile = await client.api.profiles.update('id');
    * ```
    */
-  update(
-    id: string,
-    body: ProfileUpdateParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<ProfileUpdateResponse> {
+  update(id: string, body: ProfileUpdateParams | null | undefined = {}, options?: RequestOptions): APIPromise<ProfileUpdateResponse> {
     return this._client.put(path`/api/profiles/${id}`, { body, ...options });
   }
 
@@ -57,10 +53,7 @@ export class Profiles extends APIResource {
    * const profiles = await client.api.profiles.list();
    * ```
    */
-  list(
-    query: ProfileListParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<ProfileListResponse> {
+  list(query: ProfileListParams | null | undefined = {}, options?: RequestOptions): APIPromise<ProfileListResponse> {
     return this._client.get('/api/profiles', { query, ...options });
   }
 
@@ -73,10 +66,7 @@ export class Profiles extends APIResource {
    * ```
    */
   delete(id: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.delete(path`/api/profiles/${id}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.delete(path`/api/profiles/${id}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   /**
@@ -88,10 +78,7 @@ export class Profiles extends APIResource {
    * ```
    */
   activity(id: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/profiles/${id}/activity`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get(path`/api/profiles/${id}/activity`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   /**
@@ -431,6 +418,6 @@ export declare namespace Profiles {
     type ProfileBulkUploadResponse as ProfileBulkUploadResponse,
     type ProfileCreateParams as ProfileCreateParams,
     type ProfileUpdateParams as ProfileUpdateParams,
-    type ProfileListParams as ProfileListParams,
+    type ProfileListParams as ProfileListParams
   };
 }

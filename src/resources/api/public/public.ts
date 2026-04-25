@@ -2,16 +2,7 @@
 
 import { APIResource } from '../../../core/resource';
 import * as DeliveryAPI from './delivery';
-import {
-  Delivery,
-  DeliveryGetOptionsParams,
-  DeliveryGetOptionsResponse,
-  DeliveryListCountriesResponse,
-  DeliveryLookupOptionsParams,
-  DeliveryLookupOptionsResponse,
-  DeliveryValidateSelectionParams,
-  DeliveryValidateSelectionResponse,
-} from './delivery';
+import { Delivery, DeliveryGetOptionsParams, DeliveryGetOptionsResponse, DeliveryListCountriesResponse, DeliveryLookupOptionsParams, DeliveryLookupOptionsResponse, DeliveryValidateSelectionParams, DeliveryValidateSelectionResponse } from './delivery';
 
 export class Public extends APIResource {
   delivery: DeliveryAPI.Delivery = new DeliveryAPI.Delivery(this._client);
@@ -28,6 +19,6 @@ export declare namespace Public {
     type DeliveryValidateSelectionResponse as DeliveryValidateSelectionResponse,
     type DeliveryGetOptionsParams as DeliveryGetOptionsParams,
     type DeliveryLookupOptionsParams as DeliveryLookupOptionsParams,
-    type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams,
+    type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams
   };
 }

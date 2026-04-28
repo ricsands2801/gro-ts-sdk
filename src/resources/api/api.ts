@@ -2,7 +2,17 @@
 
 import { APIResource } from '../../core/resource';
 import * as ProfilesAPI from './profiles';
-import { ProfileBulkUploadResponse, ProfileCreateParams, ProfileCreateResponse, ProfileListParams, ProfileListResponse, ProfileRetrieveResponse, ProfileUpdateParams, ProfileUpdateResponse, Profiles } from './profiles';
+import {
+  ProfileBulkUploadResponse,
+  ProfileCreateParams,
+  ProfileCreateResponse,
+  ProfileListParams,
+  ProfileListResponse,
+  ProfileRetrieveResponse,
+  ProfileUpdateParams,
+  ProfileUpdateResponse,
+  Profiles,
+} from './profiles';
 import * as PublicAPI from './public/public';
 import { Public } from './public/public';
 import * as SubscriptionsAPI from './subscriptions/subscriptions';
@@ -25,20 +35,21 @@ export class API extends APIResource {
    * ```
    */
   retrieve(options?: RequestOptions): APIPromise<string> {
-    return this._client.get('/api', { ...options, headers: buildHeaders([{Accept: 'text/html'}, options?.headers]) });
+    return this._client.get('/api', {
+      ...options,
+      headers: buildHeaders([{ Accept: 'text/html' }, options?.headers]),
+    });
   }
 }
 
-export type APIRetrieveResponse = string
+export type APIRetrieveResponse = string;
 
 API.Profiles = Profiles;
 API.Subscriptions = Subscriptions;
 API.Public = Public;
 
 export declare namespace API {
-  export {
-    type APIRetrieveResponse as APIRetrieveResponse
-  };
+  export { type APIRetrieveResponse as APIRetrieveResponse };
 
   export {
     Profiles as Profiles,
@@ -49,14 +60,10 @@ export declare namespace API {
     type ProfileBulkUploadResponse as ProfileBulkUploadResponse,
     type ProfileCreateParams as ProfileCreateParams,
     type ProfileUpdateParams as ProfileUpdateParams,
-    type ProfileListParams as ProfileListParams
+    type ProfileListParams as ProfileListParams,
   };
 
-  export {
-    Subscriptions as Subscriptions
-  };
+  export { Subscriptions as Subscriptions };
 
-  export {
-    Public as Public
-  };
+  export { Public as Public };
 }

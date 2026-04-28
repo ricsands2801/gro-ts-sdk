@@ -2,7 +2,16 @@
 
 import { APIResource } from '../../../core/resource';
 import * as EntitiesAPI from './entities';
-import { Entities, EntityCreateParams, EntityCreateResponse, EntityListParams, EntityListResponse, EntityRetrieveResponse, EntityUpdateParams, EntityUpdateResponse } from './entities';
+import {
+  Entities,
+  EntityCreateParams,
+  EntityCreateResponse,
+  EntityListParams,
+  EntityListResponse,
+  EntityRetrieveResponse,
+  EntityUpdateParams,
+  EntityUpdateResponse,
+} from './entities';
 
 export class Subscriptions extends APIResource {
   entities: EntitiesAPI.Entities = new EntitiesAPI.Entities(this._client);
@@ -19,6 +28,6 @@ export declare namespace Subscriptions {
     type EntityListResponse as EntityListResponse,
     type EntityCreateParams as EntityCreateParams,
     type EntityUpdateParams as EntityUpdateParams,
-    type EntityListParams as EntityListParams
+    type EntityListParams as EntityListParams,
   };
 }

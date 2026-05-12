@@ -79,31 +79,37 @@ export class Delivery extends APIResource {
 }
 
 export interface DeliveryGetOptionsResponse {
-  available: boolean;
-
-  countries: Array<DeliveryGetOptionsResponse.Country>;
-
-  delivery_enabled: boolean;
-
-  uses_postcodes: boolean;
-
-  uses_states: boolean;
+  data: DeliveryGetOptionsResponse.Data;
 }
 
 export namespace DeliveryGetOptionsResponse {
-  export interface Country {
-    code?: string;
+  export interface Data {
+    available: boolean;
 
-    name?: string;
+    countries: Array<Data.Country>;
 
-    states?: Array<Country.State>;
+    delivery_enabled: boolean;
+
+    uses_postcodes: boolean;
+
+    uses_states: boolean;
   }
 
-  export namespace Country {
-    export interface State {
+  export namespace Data {
+    export interface Country {
       code?: string;
 
       name?: string;
+
+      states?: Array<Country.State>;
+    }
+
+    export namespace Country {
+      export interface State {
+        code?: string;
+
+        name?: string;
+      }
     }
   }
 }
@@ -134,6 +140,8 @@ export interface DeliveryLookupOptionsResponse {
 
 export namespace DeliveryLookupOptionsResponse {
   export interface Date {
+    billing_date: string;
+
     date: string;
 
     day_name: string;
@@ -141,6 +149,8 @@ export namespace DeliveryLookupOptionsResponse {
     day_of_week: number;
 
     formatted_date: string;
+
+    production_date: string;
 
     slots: Array<Date.Slot>;
   }

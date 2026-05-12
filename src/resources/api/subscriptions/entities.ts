@@ -87,75 +87,93 @@ export class Entities extends APIResource {
 }
 
 export interface EntityCreateResponse {
-  id: string;
+  data: EntityCreateResponse.Data;
+}
 
-  account_id: string;
+export namespace EntityCreateResponse {
+  export interface Data {
+    id: string;
 
-  entity_type: string;
+    account_id: string;
 
-  is_active: boolean;
+    entity_type: string;
 
-  name: string;
+    is_active: boolean;
 
-  profile_id: string;
+    name: string;
 
-  attributes?: string;
+    profile_id: string;
 
-  created_at?: string | null;
+    attributes?: string;
 
-  image_url?: string | null;
+    created_at?: string | null;
 
-  updated_at?: string | null;
+    image_url?: string | null;
 
-  wizard_id?: string | null;
+    updated_at?: string | null;
+
+    wizard_id?: string | null;
+  }
 }
 
 export interface EntityRetrieveResponse {
-  id: string;
+  data: EntityRetrieveResponse.Data;
+}
 
-  account_id: string;
+export namespace EntityRetrieveResponse {
+  export interface Data {
+    id: string;
 
-  entity_type: string;
+    account_id: string;
 
-  is_active: boolean;
+    entity_type: string;
 
-  name: string;
+    is_active: boolean;
 
-  profile_id: string;
+    name: string;
 
-  attributes?: string;
+    profile_id: string;
 
-  created_at?: string | null;
+    attributes?: string;
 
-  image_url?: string | null;
+    created_at?: string | null;
 
-  updated_at?: string | null;
+    image_url?: string | null;
 
-  wizard_id?: string | null;
+    updated_at?: string | null;
+
+    wizard_id?: string | null;
+  }
 }
 
 export interface EntityUpdateResponse {
-  id: string;
+  data: EntityUpdateResponse.Data;
+}
 
-  account_id: string;
+export namespace EntityUpdateResponse {
+  export interface Data {
+    id: string;
 
-  entity_type: string;
+    account_id: string;
 
-  is_active: boolean;
+    entity_type: string;
 
-  name: string;
+    is_active: boolean;
 
-  profile_id: string;
+    name: string;
 
-  attributes?: string;
+    profile_id: string;
 
-  created_at?: string | null;
+    attributes?: string;
 
-  image_url?: string | null;
+    created_at?: string | null;
 
-  updated_at?: string | null;
+    image_url?: string | null;
 
-  wizard_id?: string | null;
+    updated_at?: string | null;
+
+    wizard_id?: string | null;
+  }
 }
 
 export interface EntityListResponse {

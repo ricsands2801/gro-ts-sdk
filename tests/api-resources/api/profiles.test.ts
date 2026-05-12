@@ -121,6 +121,7 @@ describe('resource profiles', () => {
           email_status: 'subscribed',
           limit: 0,
           page: 0,
+          search: 'search',
           shopify_customer_id: 'shopify_customer_id',
         },
         { path: '/_stainless_unknown_path' },

@@ -6,6 +6,23 @@ import { RequestOptions } from '../../../internal/request-options';
 
 export class Delivery extends APIResource {
   /**
+   * Used by the cart-refresh flow to recover abandoned carts whose stored delivery
+   * date has fallen into the past.
+   *
+   * @example
+   * ```ts
+   * const response =
+   *   await client.api.public.delivery.getNextAvailable({
+   *     shop: 'shop',
+   *     slot_id: 'slot_id',
+   *   });
+   * ```
+   */
+  getNextAvailable(query: DeliveryGetNextAvailableParams, options?: RequestOptions): APIPromise<unknown> {
+    return this._client.get('/api/public/delivery/next-available', { query, ...options });
+  }
+
+  /**
    * Get delivery options for an account
    *
    * @example
@@ -78,32 +95,40 @@ export class Delivery extends APIResource {
   }
 }
 
+export type DeliveryGetNextAvailableResponse = unknown;
+
 export interface DeliveryGetOptionsResponse {
-  available: boolean;
-
-  countries: Array<DeliveryGetOptionsResponse.Country>;
-
-  delivery_enabled: boolean;
-
-  uses_postcodes: boolean;
-
-  uses_states: boolean;
+  data: DeliveryGetOptionsResponse.Data;
 }
 
 export namespace DeliveryGetOptionsResponse {
-  export interface Country {
-    code?: string;
+  export interface Data {
+    available: boolean;
 
-    name?: string;
+    countries: Array<Data.Country>;
 
-    states?: Array<Country.State>;
+    delivery_enabled: boolean;
+
+    uses_postcodes: boolean;
+
+    uses_states: boolean;
   }
 
-  export namespace Country {
-    export interface State {
+  export namespace Data {
+    export interface Country {
       code?: string;
 
       name?: string;
+
+      states?: Array<Country.State>;
+    }
+
+    export namespace Country {
+      export interface State {
+        code?: string;
+
+        name?: string;
+      }
     }
   }
 }
@@ -134,6 +159,8 @@ export interface DeliveryLookupOptionsResponse {
 
 export namespace DeliveryLookupOptionsResponse {
   export interface Date {
+    billing_date: string;
+
     date: string;
 
     day_name: string;
@@ -141,6 +168,8 @@ export namespace DeliveryLookupOptionsResponse {
     day_of_week: number;
 
     formatted_date: string;
+
+    production_date: string;
 
     slots: Array<Date.Slot>;
   }
@@ -163,6 +192,14 @@ export namespace DeliveryLookupOptionsResponse {
 }
 
 export type DeliveryValidateSelectionResponse = unknown;
+
+export interface DeliveryGetNextAvailableParams {
+  shop: string;
+
+  slot_id: string;
+
+  timezone?: string;
+}
 
 export interface DeliveryGetOptionsParams {
   /**
@@ -199,10 +236,12 @@ export interface DeliveryValidateSelectionParams {
 
 export declare namespace Delivery {
   export {
+    type DeliveryGetNextAvailableResponse as DeliveryGetNextAvailableResponse,
     type DeliveryGetOptionsResponse as DeliveryGetOptionsResponse,
     type DeliveryListCountriesResponse as DeliveryListCountriesResponse,
     type DeliveryLookupOptionsResponse as DeliveryLookupOptionsResponse,
     type DeliveryValidateSelectionResponse as DeliveryValidateSelectionResponse,
+    type DeliveryGetNextAvailableParams as DeliveryGetNextAvailableParams,
     type DeliveryGetOptionsParams as DeliveryGetOptionsParams,
     type DeliveryLookupOptionsParams as DeliveryLookupOptionsParams,
     type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams,

@@ -17,7 +17,13 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { API as ApiapiAPI, APIRetrieveResponse } from './resources/api/api';
+import { Mcp } from './resources/mcp';
+import {
+  API as ApiapiAPI,
+  APILogCustomActionParams,
+  APILogCustomActionResponse,
+  APIRetrieveResponse,
+} from './resources/api/api';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -170,6 +176,18 @@ export class Gro {
     this.maxRetries = options.maxRetries ?? 2;
     this.fetch = options.fetch ?? Shims.getDefaultFetch();
     this.#encoder = Opts.FallbackEncoder;
+
+    const customHeadersEnv = readEnv('GRO_CUSTOM_HEADERS');
+    if (customHeadersEnv) {
+      const parsed: Record<string, string> = {};
+      for (const line of customHeadersEnv.split('\n')) {
+        const colon = line.indexOf(':');
+        if (colon >= 0) {
+          parsed[line.substring(0, colon).trim()] = line.substring(colon + 1).trim();
+        }
+      }
+      options.defaultHeaders = { ...parsed, ...options.defaultHeaders };
+    }
 
     this._options = options;
 
@@ -754,12 +772,21 @@ export class Gro {
   static toFile = Uploads.toFile;
 
   api: API.API = new API.API(this);
+  mcp: API.Mcp = new API.Mcp(this);
 }
 
 Gro.API = ApiapiAPI;
+Gro.Mcp = Mcp;
 
 export declare namespace Gro {
   export type RequestOptions = Opts.RequestOptions;
 
-  export { ApiapiAPI as API, type APIRetrieveResponse as APIRetrieveResponse };
+  export {
+    ApiapiAPI as API,
+    type APIRetrieveResponse as APIRetrieveResponse,
+    type APILogCustomActionResponse as APILogCustomActionResponse,
+    type APILogCustomActionParams as APILogCustomActionParams,
+  };
+
+  export { Mcp as Mcp };
 }

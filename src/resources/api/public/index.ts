@@ -2,10 +2,12 @@
 
 export {
   Delivery,
+  type DeliveryGetNextAvailableResponse,
   type DeliveryGetOptionsResponse,
   type DeliveryListCountriesResponse,
   type DeliveryLookupOptionsResponse,
   type DeliveryValidateSelectionResponse,
+  type DeliveryGetNextAvailableParams,
   type DeliveryGetOptionsParams,
   type DeliveryLookupOptionsParams,
   type DeliveryValidateSelectionParams,

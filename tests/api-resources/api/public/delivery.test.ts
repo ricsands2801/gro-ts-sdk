@@ -9,6 +9,27 @@ const client = new Gro({
 
 describe('resource delivery', () => {
   // Mock server tests are disabled
+  test.skip('getNextAvailable: only required params', async () => {
+    const responsePromise = client.api.public.delivery.getNextAvailable({ shop: 'shop', slot_id: 'slot_id' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('getNextAvailable: required and optional params', async () => {
+    const response = await client.api.public.delivery.getNextAvailable({
+      shop: 'shop',
+      slot_id: 'slot_id',
+      timezone: 'timezone',
+    });
+  });
+
+  // Mock server tests are disabled
   test.skip('getOptions: only required params', async () => {
     const responsePromise = client.api.public.delivery.getOptions({ shop: 'shop' });
     const rawResponse = await responsePromise.asResponse();

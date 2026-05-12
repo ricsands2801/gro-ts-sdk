@@ -10,4 +10,42 @@ export {
   type EntityUpdateParams,
   type EntityListParams,
 } from './entities';
-export { Subscriptions } from './subscriptions';
+export { Orders, type OrderRetrieveResponse, type OrderListResponse, type OrderListParams } from './orders';
+export {
+  PaymentMethod,
+  type PaymentMethodRetrieveResponse,
+  type PaymentMethodUpdateResponse,
+  type PaymentMethodSendUpdateEmailResponse,
+  type PaymentMethodUpdateParams,
+} from './payment-method';
+export { PaymentMethods, type PaymentMethodListResponse } from './payment-methods';
+export {
+  Subscriptions,
+  type SubscriptionCreateResponse,
+  type SubscriptionRetrieveResponse,
+  type SubscriptionListResponse,
+  type SubscriptionCancelResponse,
+  type SubscriptionGeneratePortalLinkResponse,
+  type SubscriptionGetRescheduleOptionsResponse,
+  type SubscriptionPauseResponse,
+  type SubscriptionReactivateResponse,
+  type SubscriptionRescheduleResponse,
+  type SubscriptionResumeResponse,
+  type SubscriptionRetryPaymentResponse,
+  type SubscriptionShipNowResponse,
+  type SubscriptionSkipResponse,
+  type SubscriptionUpdateBillingDateResponse,
+  type SubscriptionUpdateDeliveryInstructionsResponse,
+  type SubscriptionUpdateFrequencyResponse,
+  type SubscriptionCreateParams,
+  type SubscriptionListParams,
+  type SubscriptionCancelParams,
+  type SubscriptionPauseParams,
+  type SubscriptionRescheduleParams,
+  type SubscriptionResumeParams,
+  type SubscriptionShipNowParams,
+  type SubscriptionSkipParams,
+  type SubscriptionUpdateBillingDateParams,
+  type SubscriptionUpdateDeliveryInstructionsParams,
+  type SubscriptionUpdateFrequencyParams,
+} from './subscriptions';

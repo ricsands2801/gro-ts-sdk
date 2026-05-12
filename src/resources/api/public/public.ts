@@ -4,6 +4,8 @@ import { APIResource } from '../../../core/resource';
 import * as DeliveryAPI from './delivery';
 import {
   Delivery,
+  DeliveryGetNextAvailableParams,
+  DeliveryGetNextAvailableResponse,
   DeliveryGetOptionsParams,
   DeliveryGetOptionsResponse,
   DeliveryListCountriesResponse,
@@ -22,10 +24,12 @@ Public.Delivery = Delivery;
 export declare namespace Public {
   export {
     Delivery as Delivery,
+    type DeliveryGetNextAvailableResponse as DeliveryGetNextAvailableResponse,
     type DeliveryGetOptionsResponse as DeliveryGetOptionsResponse,
     type DeliveryListCountriesResponse as DeliveryListCountriesResponse,
     type DeliveryLookupOptionsResponse as DeliveryLookupOptionsResponse,
     type DeliveryValidateSelectionResponse as DeliveryValidateSelectionResponse,
+    type DeliveryGetNextAvailableParams as DeliveryGetNextAvailableParams,
     type DeliveryGetOptionsParams as DeliveryGetOptionsParams,
     type DeliveryLookupOptionsParams as DeliveryLookupOptionsParams,
     type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams,

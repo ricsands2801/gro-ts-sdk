@@ -105,23 +105,15 @@ Types:
 
 - <code><a href="./src/resources/api/subscriptions/payment-method.ts">PaymentMethodRetrieveResponse</a></code>
 - <code><a href="./src/resources/api/subscriptions/payment-method.ts">PaymentMethodUpdateResponse</a></code>
+- <code><a href="./src/resources/api/subscriptions/payment-method.ts">PaymentMethodListResponse</a></code>
 - <code><a href="./src/resources/api/subscriptions/payment-method.ts">PaymentMethodSendUpdateEmailResponse</a></code>
 
 Methods:
 
 - <code title="get /api/subscriptions/{id}/payment-method">client.api.subscriptions.paymentMethod.<a href="./src/resources/api/subscriptions/payment-method.ts">retrieve</a>(id) -> PaymentMethodRetrieveResponse</code>
 - <code title="put /api/subscriptions/{id}/payment-method">client.api.subscriptions.paymentMethod.<a href="./src/resources/api/subscriptions/payment-method.ts">update</a>(id, { ...params }) -> PaymentMethodUpdateResponse</code>
+- <code title="get /api/subscriptions/payment-methods/by-profile/{profileId}">client.api.subscriptions.paymentMethod.<a href="./src/resources/api/subscriptions/payment-method.ts">list</a>(profileID) -> PaymentMethodListResponse</code>
 - <code title="post /api/subscriptions/{id}/payment-method/send-update-email">client.api.subscriptions.paymentMethod.<a href="./src/resources/api/subscriptions/payment-method.ts">sendUpdateEmail</a>(id) -> PaymentMethodSendUpdateEmailResponse</code>
-
-### PaymentMethods
-
-Types:
-
-- <code><a href="./src/resources/api/subscriptions/payment-methods.ts">PaymentMethodListResponse</a></code>
-
-Methods:
-
-- <code title="get /api/subscriptions/payment-methods/by-profile/{profileId}">client.api.subscriptions.paymentMethods.<a href="./src/resources/api/subscriptions/payment-methods.ts">list</a>(profileID) -> PaymentMethodListResponse</code>
 
 ## Public
 

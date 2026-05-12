@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.4.0 (2026-05-12)
+
+Full Changelog: [v0.3.0...v0.4.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.3.0...v0.4.0)
+
+### Features
+
+* **api:** api update ([b532066](https://github.com/ricsands2801/gro-ts-sdk/commit/b5320669a8b222ffe098342378c20b7605bfe7d6))
+* **api:** manual updates ([4f9ca1d](https://github.com/ricsands2801/gro-ts-sdk/commit/4f9ca1d0a073e4a4ea445772df2313d9a73e86a1))
+* support setting headers via env ([3ea876d](https://github.com/ricsands2801/gro-ts-sdk/commit/3ea876d1af9155d3b4a214ae97bba1a1dd6e13d7))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([188e301](https://github.com/ricsands2801/gro-ts-sdk/commit/188e3016b889b10a9a89b6512828275bd5ea38e1))
+* **format:** run eslint and prettier separately ([cd41989](https://github.com/ricsands2801/gro-ts-sdk/commit/cd41989a5c6251081ee502d68df910a9c31f0670))
+* **formatter:** run prettier and eslint separately ([817f420](https://github.com/ricsands2801/gro-ts-sdk/commit/817f420b36b316522fd1fd97ce519c7abc7ffec5))
+* **internal:** codegen related update ([9ae8830](https://github.com/ricsands2801/gro-ts-sdk/commit/9ae8830bb25a4bdf40e3000aa0d74098e923fe0b))
+* **internal:** codegen related update ([e28068f](https://github.com/ricsands2801/gro-ts-sdk/commit/e28068fd8bd968fd0032855616854aa33178001a))
+* **internal:** more robust bootstrap script ([6289407](https://github.com/ricsands2801/gro-ts-sdk/commit/6289407bf3922e67fc5731be12c8bf62f85e0a41))
+* **internal:** tweak CI branches ([bab736d](https://github.com/ricsands2801/gro-ts-sdk/commit/bab736df3878cfd0c4c22b753657a2baa6ed458d))
+* **internal:** update gitignore ([19316a3](https://github.com/ricsands2801/gro-ts-sdk/commit/19316a35cd445e54981cc3b9d295fdf5fbfb111f))
+* redact api-key headers in debug logs ([734d67a](https://github.com/ricsands2801/gro-ts-sdk/commit/734d67a83cc92ff71ad93c130b032af31ecb9821))
+
 ## 0.3.0 (2026-03-11)
 
 Full Changelog: [v0.2.1...v0.3.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.2.1...v0.3.0)

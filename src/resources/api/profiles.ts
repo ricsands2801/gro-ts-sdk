@@ -108,129 +108,147 @@ export class Profiles extends APIResource {
 }
 
 export interface ProfileCreateResponse {
-  id: string;
+  data: ProfileCreateResponse.Data;
+}
 
-  email: string;
+export namespace ProfileCreateResponse {
+  export interface Data {
+    id: string;
 
-  full_address: string;
+    email: string;
 
-  full_name: string;
+    full_address: string;
 
-  address1?: string | null;
+    full_name: string;
 
-  address2?: string | null;
+    address1?: string | null;
 
-  city?: string | null;
+    address2?: string | null;
 
-  country?: string | null;
+    city?: string | null;
 
-  created_at?: string | null;
+    country?: string | null;
 
-  email_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
+    created_at?: string | null;
 
-  external_id?: string | null;
+    email_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
 
-  first_name?: string | null;
+    external_id?: string | null;
 
-  last_name?: string | null;
+    first_name?: string | null;
 
-  phone_number?: string | null;
+    last_name?: string | null;
 
-  postal_code?: string | null;
+    phone_number?: string | null;
 
-  region?: string | null;
+    postal_code?: string | null;
 
-  shopify_customer_id?: string | null;
+    region?: string | null;
 
-  sms_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
+    shopify_customer_id?: string | null;
 
-  timezone?: string | null;
+    sms_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
 
-  updated_at?: string | null;
+    timezone?: string | null;
+
+    updated_at?: string | null;
+  }
 }
 
 export interface ProfileRetrieveResponse {
-  id: string;
+  data: ProfileRetrieveResponse.Data;
+}
 
-  email: string;
+export namespace ProfileRetrieveResponse {
+  export interface Data {
+    id: string;
 
-  full_address: string;
+    email: string;
 
-  full_name: string;
+    full_address: string;
 
-  address1?: string | null;
+    full_name: string;
 
-  address2?: string | null;
+    address1?: string | null;
 
-  city?: string | null;
+    address2?: string | null;
 
-  country?: string | null;
+    city?: string | null;
 
-  created_at?: string | null;
+    country?: string | null;
 
-  email_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
+    created_at?: string | null;
 
-  external_id?: string | null;
+    email_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
 
-  first_name?: string | null;
+    external_id?: string | null;
 
-  last_name?: string | null;
+    first_name?: string | null;
 
-  phone_number?: string | null;
+    last_name?: string | null;
 
-  postal_code?: string | null;
+    phone_number?: string | null;
 
-  region?: string | null;
+    postal_code?: string | null;
 
-  shopify_customer_id?: string | null;
+    region?: string | null;
 
-  sms_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
+    shopify_customer_id?: string | null;
 
-  timezone?: string | null;
+    sms_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
 
-  updated_at?: string | null;
+    timezone?: string | null;
+
+    updated_at?: string | null;
+  }
 }
 
 export interface ProfileUpdateResponse {
-  id: string;
+  data: ProfileUpdateResponse.Data;
+}
 
-  email: string;
+export namespace ProfileUpdateResponse {
+  export interface Data {
+    id: string;
 
-  full_address: string;
+    email: string;
 
-  full_name: string;
+    full_address: string;
 
-  address1?: string | null;
+    full_name: string;
 
-  address2?: string | null;
+    address1?: string | null;
 
-  city?: string | null;
+    address2?: string | null;
 
-  country?: string | null;
+    city?: string | null;
 
-  created_at?: string | null;
+    country?: string | null;
 
-  email_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
+    created_at?: string | null;
 
-  external_id?: string | null;
+    email_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
 
-  first_name?: string | null;
+    external_id?: string | null;
 
-  last_name?: string | null;
+    first_name?: string | null;
 
-  phone_number?: string | null;
+    last_name?: string | null;
 
-  postal_code?: string | null;
+    phone_number?: string | null;
 
-  region?: string | null;
+    postal_code?: string | null;
 
-  shopify_customer_id?: string | null;
+    region?: string | null;
 
-  sms_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
+    shopify_customer_id?: string | null;
 
-  timezone?: string | null;
+    sms_status?: 'subscribed' | 'unsubscribed' | 'suppressed' | (string & {});
 
-  updated_at?: string | null;
+    timezone?: string | null;
+
+    updated_at?: string | null;
+  }
 }
 
 export interface ProfileListResponse {
@@ -418,6 +436,8 @@ export interface ProfileListParams {
   limit?: number;
 
   page?: number;
+
+  search?: string;
 
   shopify_customer_id?: string;
 }

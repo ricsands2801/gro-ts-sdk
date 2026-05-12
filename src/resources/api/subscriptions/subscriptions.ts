@@ -17,13 +17,12 @@ import { OrderListParams, OrderListResponse, OrderRetrieveResponse, Orders } fro
 import * as PaymentMethodAPI from './payment-method';
 import {
   PaymentMethod,
+  PaymentMethodListResponse,
   PaymentMethodRetrieveResponse,
   PaymentMethodSendUpdateEmailResponse,
   PaymentMethodUpdateParams,
   PaymentMethodUpdateResponse,
 } from './payment-method';
-import * as PaymentMethodsAPI from './payment-methods';
-import { PaymentMethodListResponse, PaymentMethods } from './payment-methods';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
@@ -32,7 +31,6 @@ export class Subscriptions extends APIResource {
   entities: EntitiesAPI.Entities = new EntitiesAPI.Entities(this._client);
   orders: OrdersAPI.Orders = new OrdersAPI.Orders(this._client);
   paymentMethod: PaymentMethodAPI.PaymentMethod = new PaymentMethodAPI.PaymentMethod(this._client);
-  paymentMethods: PaymentMethodsAPI.PaymentMethods = new PaymentMethodsAPI.PaymentMethods(this._client);
 
   /**
    * Creates new subscriptions for a profile. Lines split across entities will
@@ -3919,7 +3917,6 @@ export interface SubscriptionUpdateFrequencyParams {
 Subscriptions.Entities = Entities;
 Subscriptions.Orders = Orders;
 Subscriptions.PaymentMethod = PaymentMethod;
-Subscriptions.PaymentMethods = PaymentMethods;
 
 export declare namespace Subscriptions {
   export {
@@ -3974,9 +3971,8 @@ export declare namespace Subscriptions {
     PaymentMethod as PaymentMethod,
     type PaymentMethodRetrieveResponse as PaymentMethodRetrieveResponse,
     type PaymentMethodUpdateResponse as PaymentMethodUpdateResponse,
+    type PaymentMethodListResponse as PaymentMethodListResponse,
     type PaymentMethodSendUpdateEmailResponse as PaymentMethodSendUpdateEmailResponse,
     type PaymentMethodUpdateParams as PaymentMethodUpdateParams,
   };
-
-  export { PaymentMethods as PaymentMethods, type PaymentMethodListResponse as PaymentMethodListResponse };
 }

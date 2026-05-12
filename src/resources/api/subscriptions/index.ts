@@ -15,10 +15,10 @@ export {
   PaymentMethod,
   type PaymentMethodRetrieveResponse,
   type PaymentMethodUpdateResponse,
+  type PaymentMethodListResponse,
   type PaymentMethodSendUpdateEmailResponse,
   type PaymentMethodUpdateParams,
 } from './payment-method';
-export { PaymentMethods, type PaymentMethodListResponse } from './payment-methods';
 export {
   Subscriptions,
   type SubscriptionCreateResponse,

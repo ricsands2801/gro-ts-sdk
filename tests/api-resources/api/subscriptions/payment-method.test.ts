@@ -42,6 +42,18 @@ describe('resource paymentMethod', () => {
   });
 
   // Mock server tests are disabled
+  test.skip('list', async () => {
+    const responsePromise = client.api.subscriptions.paymentMethod.list('profileId');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
   test.skip('sendUpdateEmail', async () => {
     const responsePromise = client.api.subscriptions.paymentMethod.sendUpdateEmail('id');
     const rawResponse = await responsePromise.asResponse();

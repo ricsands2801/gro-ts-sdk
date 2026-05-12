@@ -45,6 +45,23 @@ export class PaymentMethod extends APIResource {
   }
 
   /**
+   * Returns the payment methods on file in Shopify for the given profile,
+   * independent of any subscription. Used by the create-subscription flow to show
+   * payment methods for a customer who does not yet have a subscription.
+   *
+   * @example
+   * ```ts
+   * const paymentMethods =
+   *   await client.api.subscriptions.paymentMethod.list(
+   *     'profileId',
+   *   );
+   * ```
+   */
+  list(profileID: string, options?: RequestOptions): APIPromise<PaymentMethodListResponse> {
+    return this._client.get(path`/api/subscriptions/payment-methods/by-profile/${profileID}`, options);
+  }
+
+  /**
    * Sends the customer an email with a Shopify-hosted link to update the payment
    * method on this subscription. Uses Shopify's customerPaymentMethodSendUpdateEmail
    * mutation.
@@ -107,6 +124,29 @@ export interface PaymentMethodUpdateResponse {
   success: boolean;
 }
 
+export interface PaymentMethodListResponse {
+  available: Array<PaymentMethodListResponse.Available>;
+
+  /**
+   * False when the profile has no linked Shopify customer (available will be empty)
+   */
+  has_shopify_customer: boolean;
+}
+
+export namespace PaymentMethodListResponse {
+  export interface Available {
+    id: string;
+
+    brand: string;
+
+    expiry_month: number;
+
+    expiry_year: number;
+
+    last_digits: string;
+  }
+}
+
 export interface PaymentMethodSendUpdateEmailResponse {
   success: boolean;
 }
@@ -122,6 +162,7 @@ export declare namespace PaymentMethod {
   export {
     type PaymentMethodRetrieveResponse as PaymentMethodRetrieveResponse,
     type PaymentMethodUpdateResponse as PaymentMethodUpdateResponse,
+    type PaymentMethodListResponse as PaymentMethodListResponse,
     type PaymentMethodSendUpdateEmailResponse as PaymentMethodSendUpdateEmailResponse,
     type PaymentMethodUpdateParams as PaymentMethodUpdateParams,
   };

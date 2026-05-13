@@ -315,7 +315,11 @@ describe('resource subscriptions', () => {
 
   // Mock server tests are disabled
   test.skip('skip: required and optional params', async () => {
-    const response = await client.api.subscriptions.skip('id', { skip_weeks: 0, reason: 'reason' });
+    const response = await client.api.subscriptions.skip('id', {
+      skip_weeks: 0,
+      reason: 'reason',
+      skip_reason_id: 'skip_reason_id',
+    });
   });
 
   // Mock server tests are disabled

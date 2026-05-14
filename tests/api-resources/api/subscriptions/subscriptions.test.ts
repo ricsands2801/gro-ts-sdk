@@ -226,7 +226,6 @@ describe('resource subscriptions', () => {
         {
           billing_date: 'billing_date',
           delivery_date: 'delivery_date',
-          production_date: 'production_date',
           slot_id: 'slot_id',
         },
         { path: '/_stainless_unknown_path' },

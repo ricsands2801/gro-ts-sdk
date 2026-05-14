@@ -3896,6 +3896,8 @@ export interface SubscriptionSkipParams {
   skip_weeks: number;
 
   reason?: string;
+
+  skip_reason_id?: string | null;
 }
 
 export interface SubscriptionUpdateBillingDateParams {

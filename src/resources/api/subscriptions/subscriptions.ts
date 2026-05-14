@@ -3873,8 +3873,6 @@ export interface SubscriptionRescheduleParams {
 
   delivery_date?: string;
 
-  production_date?: string;
-
   slot_id?: string;
 }
 

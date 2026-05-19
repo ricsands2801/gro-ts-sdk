@@ -1,7 +1,6 @@
 import fs from 'fs';
 import type { ResponseLike } from 'gro-typescript/internal/to-file';
 import { toFile } from 'gro-typescript/core/uploads';
-import { File } from 'node:buffer';
 
 class MyClass {
   name: string = 'foo';

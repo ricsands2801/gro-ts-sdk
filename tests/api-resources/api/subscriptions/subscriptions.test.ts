@@ -67,6 +67,7 @@ describe('resource subscriptions', () => {
       delivery_address_id: 'delivery_address_id',
       delivery_slot_id: 'delivery_slot_id',
       note: 'note',
+      notify_customer: true,
     });
   });
 
@@ -143,7 +144,11 @@ describe('resource subscriptions', () => {
     await expect(
       client.api.subscriptions.cancel(
         'id',
-        { cancel_immediately: true, reason: 'reason' },
+        {
+          cancel_immediately: true,
+          reason: 'reason',
+          silent: true,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Gro.NotFoundError);

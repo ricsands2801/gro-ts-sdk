@@ -3768,6 +3768,8 @@ export interface SubscriptionCreateParams {
   delivery_slot_id?: string | null;
 
   note?: string | null;
+
+  notify_customer?: boolean;
 }
 
 export namespace SubscriptionCreateParams {
@@ -3862,6 +3864,8 @@ export interface SubscriptionCancelParams {
   cancel_immediately?: boolean;
 
   reason?: string;
+
+  silent?: boolean;
 }
 
 export interface SubscriptionPauseParams {

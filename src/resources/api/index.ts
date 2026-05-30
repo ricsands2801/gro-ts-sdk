@@ -3,7 +3,9 @@
 export {
   API,
   type APIRetrieveResponse,
+  type APIListActivityLogsResponse,
   type APILogCustomActionResponse,
+  type APIListActivityLogsParams,
   type APILogCustomActionParams,
 } from './api';
 export { Json, type JsonGetDocumentationResponse } from './json';

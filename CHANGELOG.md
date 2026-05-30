@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.6.0 (2026-05-30)
+
+Full Changelog: [v0.5.1...v0.6.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.5.1...v0.6.0)
+
+### Features
+
+* **api:** api update ([98a6c43](https://github.com/ricsands2801/gro-ts-sdk/commit/98a6c4321f5fe343f86572a0044ec2614231cbb7))
+* **api:** api update ([f47b4f3](https://github.com/ricsands2801/gro-ts-sdk/commit/f47b4f3a009f87d178823892806480eb108046b3))
+* **api:** api update ([5df1b1c](https://github.com/ricsands2801/gro-ts-sdk/commit/5df1b1cb7c02df8a9b59e37463bbe0e30b2939cd))
+* **api:** api update ([7d05236](https://github.com/ricsands2801/gro-ts-sdk/commit/7d05236fce55b5493d8d06b6e1b0604cb8eef672))
+* **api:** manual updates ([c8dd042](https://github.com/ricsands2801/gro-ts-sdk/commit/c8dd04233b7a7dbb25b5fea92e432ac4ad5cbeb2))
+
+
+### Bug Fixes
+
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([2a9ecb5](https://github.com/ricsands2801/gro-ts-sdk/commit/2a9ecb5dd6da6793874ffee20bb8e2b5a7b06278))
+
+
+### Chores
+
+* **tests:** remove redundant File import ([6c52512](https://github.com/ricsands2801/gro-ts-sdk/commit/6c52512a50e29fb6bd663d0f4b8faa2c1af468a2))
+
 ## 0.5.1 (2026-05-12)
 
 Full Changelog: [v0.5.0...v0.5.1](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.5.0...v0.5.1)

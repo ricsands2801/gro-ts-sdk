@@ -12,4 +12,5 @@ export {
   type DeliveryLookupOptionsParams,
   type DeliveryValidateSelectionParams,
 } from './delivery';
+export { Portal, type PortalListSkipReasonsResponse, type PortalListSkipReasonsParams } from './portal';
 export { Public } from './public';

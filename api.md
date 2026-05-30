@@ -3,11 +3,13 @@
 Types:
 
 - <code><a href="./src/resources/api/api.ts">APIRetrieveResponse</a></code>
+- <code><a href="./src/resources/api/api.ts">APIListActivityLogsResponse</a></code>
 - <code><a href="./src/resources/api/api.ts">APILogCustomActionResponse</a></code>
 
 Methods:
 
 - <code title="get /api">client.api.<a href="./src/resources/api/api.ts">retrieve</a>() -> string</code>
+- <code title="get /api/activity-logs">client.api.<a href="./src/resources/api/api.ts">listActivityLogs</a>({ ...params }) -> APIListActivityLogsResponse</code>
 - <code title="post /api/activity-logs">client.api.<a href="./src/resources/api/api.ts">logCustomAction</a>({ ...params }) -> APILogCustomActionResponse</code>
 
 ## Profiles
@@ -115,6 +117,25 @@ Methods:
 - <code title="get /api/subscriptions/payment-methods/by-profile/{profileId}">client.api.subscriptions.paymentMethod.<a href="./src/resources/api/subscriptions/payment-method.ts">list</a>(profileID) -> PaymentMethodListResponse</code>
 - <code title="post /api/subscriptions/{id}/payment-method/send-update-email">client.api.subscriptions.paymentMethod.<a href="./src/resources/api/subscriptions/payment-method.ts">sendUpdateEmail</a>(id) -> PaymentMethodSendUpdateEmailResponse</code>
 
+### SkipReasons
+
+Types:
+
+- <code><a href="./src/resources/api/subscriptions/skip-reasons.ts">SkipReasonCreateResponse</a></code>
+- <code><a href="./src/resources/api/subscriptions/skip-reasons.ts">SkipReasonRetrieveResponse</a></code>
+- <code><a href="./src/resources/api/subscriptions/skip-reasons.ts">SkipReasonUpdateResponse</a></code>
+- <code><a href="./src/resources/api/subscriptions/skip-reasons.ts">SkipReasonListResponse</a></code>
+- <code><a href="./src/resources/api/subscriptions/skip-reasons.ts">SkipReasonReorderResponse</a></code>
+
+Methods:
+
+- <code title="post /api/subscriptions/skip-reasons">client.api.subscriptions.skipReasons.<a href="./src/resources/api/subscriptions/skip-reasons.ts">create</a>({ ...params }) -> SkipReasonCreateResponse</code>
+- <code title="get /api/subscriptions/skip-reasons/{id}">client.api.subscriptions.skipReasons.<a href="./src/resources/api/subscriptions/skip-reasons.ts">retrieve</a>(id) -> SkipReasonRetrieveResponse</code>
+- <code title="put /api/subscriptions/skip-reasons/{id}">client.api.subscriptions.skipReasons.<a href="./src/resources/api/subscriptions/skip-reasons.ts">update</a>(id, { ...params }) -> SkipReasonUpdateResponse</code>
+- <code title="get /api/subscriptions/skip-reasons">client.api.subscriptions.skipReasons.<a href="./src/resources/api/subscriptions/skip-reasons.ts">list</a>() -> SkipReasonListResponse</code>
+- <code title="delete /api/subscriptions/skip-reasons/{id}">client.api.subscriptions.skipReasons.<a href="./src/resources/api/subscriptions/skip-reasons.ts">delete</a>(id) -> void</code>
+- <code title="post /api/subscriptions/skip-reasons/reorder">client.api.subscriptions.skipReasons.<a href="./src/resources/api/subscriptions/skip-reasons.ts">reorder</a>({ ...params }) -> SkipReasonReorderResponse</code>
+
 ## Public
 
 ### Delivery
@@ -134,6 +155,16 @@ Methods:
 - <code title="get /api/public/delivery/countries">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">listCountries</a>() -> unknown</code>
 - <code title="get /api/public/delivery/lookup">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">lookupOptions</a>({ ...params }) -> DeliveryLookupOptionsResponse</code>
 - <code title="post /api/public/delivery/validate">client.api.public.delivery.<a href="./src/resources/api/public/delivery.ts">validateSelection</a>({ ...params }) -> unknown</code>
+
+### Portal
+
+Types:
+
+- <code><a href="./src/resources/api/public/portal.ts">PortalListSkipReasonsResponse</a></code>
+
+Methods:
+
+- <code title="get /api/public/portal/skip-reasons">client.api.public.portal.<a href="./src/resources/api/public/portal.ts">listSkipReasons</a>({ ...params }) -> PortalListSkipReasonsResponse</code>
 
 ## Json
 

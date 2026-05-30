@@ -14,12 +14,16 @@ import {
   DeliveryValidateSelectionParams,
   DeliveryValidateSelectionResponse,
 } from './delivery';
+import * as PortalAPI from './portal';
+import { Portal, PortalListSkipReasonsParams, PortalListSkipReasonsResponse } from './portal';
 
 export class Public extends APIResource {
   delivery: DeliveryAPI.Delivery = new DeliveryAPI.Delivery(this._client);
+  portal: PortalAPI.Portal = new PortalAPI.Portal(this._client);
 }
 
 Public.Delivery = Delivery;
+Public.Portal = Portal;
 
 export declare namespace Public {
   export {
@@ -33,5 +37,11 @@ export declare namespace Public {
     type DeliveryGetOptionsParams as DeliveryGetOptionsParams,
     type DeliveryLookupOptionsParams as DeliveryLookupOptionsParams,
     type DeliveryValidateSelectionParams as DeliveryValidateSelectionParams,
+  };
+
+  export {
+    Portal as Portal,
+    type PortalListSkipReasonsResponse as PortalListSkipReasonsResponse,
+    type PortalListSkipReasonsParams as PortalListSkipReasonsParams,
   };
 }

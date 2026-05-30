@@ -23,6 +23,18 @@ import {
   PaymentMethodUpdateParams,
   PaymentMethodUpdateResponse,
 } from './payment-method';
+import * as SkipReasonsAPI from './skip-reasons';
+import {
+  SkipReasonCreateParams,
+  SkipReasonCreateResponse,
+  SkipReasonListResponse,
+  SkipReasonReorderParams,
+  SkipReasonReorderResponse,
+  SkipReasonRetrieveResponse,
+  SkipReasonUpdateParams,
+  SkipReasonUpdateResponse,
+  SkipReasons,
+} from './skip-reasons';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
@@ -31,6 +43,7 @@ export class Subscriptions extends APIResource {
   entities: EntitiesAPI.Entities = new EntitiesAPI.Entities(this._client);
   orders: OrdersAPI.Orders = new OrdersAPI.Orders(this._client);
   paymentMethod: PaymentMethodAPI.PaymentMethod = new PaymentMethodAPI.PaymentMethod(this._client);
+  skipReasons: SkipReasonsAPI.SkipReasons = new SkipReasonsAPI.SkipReasons(this._client);
 
   /**
    * Creates new subscriptions for a profile. Lines split across entities will
@@ -3768,6 +3781,8 @@ export interface SubscriptionCreateParams {
   delivery_slot_id?: string | null;
 
   note?: string | null;
+
+  notify_customer?: boolean;
 }
 
 export namespace SubscriptionCreateParams {
@@ -3862,6 +3877,8 @@ export interface SubscriptionCancelParams {
   cancel_immediately?: boolean;
 
   reason?: string;
+
+  silent?: boolean;
 }
 
 export interface SubscriptionPauseParams {
@@ -3896,6 +3913,8 @@ export interface SubscriptionSkipParams {
   skip_weeks: number;
 
   reason?: string;
+
+  skip_reason_id?: string | null;
 }
 
 export interface SubscriptionUpdateBillingDateParams {
@@ -3917,6 +3936,7 @@ export interface SubscriptionUpdateFrequencyParams {
 Subscriptions.Entities = Entities;
 Subscriptions.Orders = Orders;
 Subscriptions.PaymentMethod = PaymentMethod;
+Subscriptions.SkipReasons = SkipReasons;
 
 export declare namespace Subscriptions {
   export {
@@ -3974,5 +3994,17 @@ export declare namespace Subscriptions {
     type PaymentMethodListResponse as PaymentMethodListResponse,
     type PaymentMethodSendUpdateEmailResponse as PaymentMethodSendUpdateEmailResponse,
     type PaymentMethodUpdateParams as PaymentMethodUpdateParams,
+  };
+
+  export {
+    SkipReasons as SkipReasons,
+    type SkipReasonCreateResponse as SkipReasonCreateResponse,
+    type SkipReasonRetrieveResponse as SkipReasonRetrieveResponse,
+    type SkipReasonUpdateResponse as SkipReasonUpdateResponse,
+    type SkipReasonListResponse as SkipReasonListResponse,
+    type SkipReasonReorderResponse as SkipReasonReorderResponse,
+    type SkipReasonCreateParams as SkipReasonCreateParams,
+    type SkipReasonUpdateParams as SkipReasonUpdateParams,
+    type SkipReasonReorderParams as SkipReasonReorderParams,
   };
 }

@@ -20,6 +20,8 @@ import { APIPromise } from './core/api-promise';
 import { Mcp } from './resources/mcp';
 import {
   API as ApiapiAPI,
+  APIListActivityLogsParams,
+  APIListActivityLogsResponse,
   APILogCustomActionParams,
   APILogCustomActionResponse,
   APIRetrieveResponse,
@@ -784,7 +786,9 @@ export declare namespace Gro {
   export {
     ApiapiAPI as API,
     type APIRetrieveResponse as APIRetrieveResponse,
+    type APIListActivityLogsResponse as APIListActivityLogsResponse,
     type APILogCustomActionResponse as APILogCustomActionResponse,
+    type APIListActivityLogsParams as APIListActivityLogsParams,
     type APILogCustomActionParams as APILogCustomActionParams,
   };
 

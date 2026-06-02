@@ -454,6 +454,8 @@ export namespace SubscriptionRetrieveResponse {
 
     paused_at?: string | null;
 
+    payment_day_of_week?: number | null;
+
     payment_method_brand?: string | null;
 
     payment_method_last4?: string | null;
@@ -721,6 +723,8 @@ export namespace SubscriptionListResponse {
     next_production_date?: string | null;
 
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -1103,6 +1107,8 @@ export namespace SubscriptionCancelResponse {
 
     paused_at?: string | null;
 
+    payment_day_of_week?: number | null;
+
     payment_method_brand?: string | null;
 
     payment_method_last4?: string | null;
@@ -1461,6 +1467,8 @@ export namespace SubscriptionPauseResponse {
 
     paused_at?: string | null;
 
+    payment_day_of_week?: number | null;
+
     payment_method_brand?: string | null;
 
     payment_method_last4?: string | null;
@@ -1760,6 +1768,8 @@ export namespace SubscriptionReactivateResponse {
     pause_reason?: string | null;
 
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -2061,6 +2071,8 @@ export namespace SubscriptionRescheduleResponse {
 
     paused_at?: string | null;
 
+    payment_day_of_week?: number | null;
+
     payment_method_brand?: string | null;
 
     payment_method_last4?: string | null;
@@ -2360,6 +2372,8 @@ export namespace SubscriptionResumeResponse {
     pause_reason?: string | null;
 
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -2673,6 +2687,8 @@ export namespace SubscriptionSkipResponse {
 
     paused_at?: string | null;
 
+    payment_day_of_week?: number | null;
+
     payment_method_brand?: string | null;
 
     payment_method_last4?: string | null;
@@ -2972,6 +2988,8 @@ export namespace SubscriptionUpdateBillingDateResponse {
     pause_reason?: string | null;
 
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -3273,6 +3291,8 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     paused_at?: string | null;
 
+    payment_day_of_week?: number | null;
+
     payment_method_brand?: string | null;
 
     payment_method_last4?: string | null;
@@ -3572,6 +3592,8 @@ export namespace SubscriptionUpdateFrequencyResponse {
     pause_reason?: string | null;
 
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 

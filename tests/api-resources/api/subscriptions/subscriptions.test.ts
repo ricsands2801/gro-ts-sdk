@@ -194,7 +194,11 @@ describe('resource subscriptions', () => {
   test.skip('pause: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.api.subscriptions.pause('id', { reason: 'reason' }, { path: '/_stainless_unknown_path' }),
+      client.api.subscriptions.pause(
+        'id',
+        { pause_reason_id: 'pause_reason_id', reason: 'reason' },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Gro.NotFoundError);
   });
 

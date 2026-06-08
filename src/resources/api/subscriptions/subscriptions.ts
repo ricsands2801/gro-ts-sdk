@@ -452,6 +452,8 @@ export namespace SubscriptionRetrieveResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
 
     payment_day_of_week?: number | null;
@@ -1105,6 +1107,8 @@ export namespace SubscriptionCancelResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
 
     payment_day_of_week?: number | null;
@@ -1465,6 +1469,8 @@ export namespace SubscriptionPauseResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
 
     payment_day_of_week?: number | null;
@@ -1766,6 +1772,8 @@ export namespace SubscriptionReactivateResponse {
     note?: string | null;
 
     pause_reason?: string | null;
+
+    pause_reason_id?: string | null;
 
     paused_at?: string | null;
 
@@ -2069,6 +2077,8 @@ export namespace SubscriptionRescheduleResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
 
     payment_day_of_week?: number | null;
@@ -2370,6 +2380,8 @@ export namespace SubscriptionResumeResponse {
     note?: string | null;
 
     pause_reason?: string | null;
+
+    pause_reason_id?: string | null;
 
     paused_at?: string | null;
 
@@ -2685,6 +2697,8 @@ export namespace SubscriptionSkipResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
 
     payment_day_of_week?: number | null;
@@ -2986,6 +3000,8 @@ export namespace SubscriptionUpdateBillingDateResponse {
     note?: string | null;
 
     pause_reason?: string | null;
+
+    pause_reason_id?: string | null;
 
     paused_at?: string | null;
 
@@ -3289,6 +3305,8 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
 
     payment_day_of_week?: number | null;
@@ -3590,6 +3608,8 @@ export namespace SubscriptionUpdateFrequencyResponse {
     note?: string | null;
 
     pause_reason?: string | null;
+
+    pause_reason_id?: string | null;
 
     paused_at?: string | null;
 
@@ -3904,6 +3924,8 @@ export interface SubscriptionCancelParams {
 }
 
 export interface SubscriptionPauseParams {
+  pause_reason_id?: string | null;
+
   reason?: string;
 }
 

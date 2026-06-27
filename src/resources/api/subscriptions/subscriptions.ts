@@ -123,7 +123,11 @@ export class Subscriptions extends APIResource {
    * Generates a one-time magic login link that authenticates the subscription owner
    * directly into the customer portal for the given subscription. Returns a
    * customer-facing link and an admin-impersonation link. Pass `expiry_days`
-   * (max 21) to control how long the links stay valid; defaults to 7 days.
+   * (max 21) to control how long the links stay valid; defaults to 7 days. Pass
+   * `short_link: true` to also receive a branded gro1.io short link for the
+   * customer-facing link (`short_portal_link`); omitted by default. The
+   * admin-impersonation link is never shortened. Pass `tab` to deep-link the portal
+   * to a specific tab (appended as `&tab=<value>`).
    *
    * @example
    * ```ts
@@ -1324,6 +1328,12 @@ export interface SubscriptionGeneratePortalLinkResponse {
    * Customer-facing magic login link to the subscription portal
    */
   portal_link: string;
+
+  /**
+   * Branded gro1.io short link that redirects to portal_link. Only present when
+   * short_link=true was requested
+   */
+  short_portal_link?: string;
 }
 
 export interface SubscriptionGetRescheduleOptionsResponse {
@@ -3926,6 +3936,10 @@ export interface SubscriptionCancelParams {
 
 export interface SubscriptionGeneratePortalLinkParams {
   expiry_days?: number;
+
+  short_link?: boolean;
+
+  tab?: string;
 }
 
 export interface SubscriptionPauseParams {

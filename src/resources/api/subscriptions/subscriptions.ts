@@ -122,8 +122,8 @@ export class Subscriptions extends APIResource {
   /**
    * Generates a one-time magic login link that authenticates the subscription owner
    * directly into the customer portal for the given subscription. Returns a
-   * customer-facing link and an admin-impersonation link, both expiring after 7
-   * days.
+   * customer-facing link and an admin-impersonation link. Pass `expiry_days`
+   * (max 21) to control how long the links stay valid; defaults to 7 days.
    *
    * @example
    * ```ts
@@ -133,9 +133,10 @@ export class Subscriptions extends APIResource {
    */
   generatePortalLink(
     id: string,
+    body: SubscriptionGeneratePortalLinkParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SubscriptionGeneratePortalLinkResponse> {
-    return this._client.post(path`/api/subscriptions/${id}/portal-link`, options);
+    return this._client.post(path`/api/subscriptions/${id}/portal-link`, { body, ...options });
   }
 
   /**
@@ -3923,6 +3924,10 @@ export interface SubscriptionCancelParams {
   silent?: boolean;
 }
 
+export interface SubscriptionGeneratePortalLinkParams {
+  expiry_days?: number;
+}
+
 export interface SubscriptionPauseParams {
   pause_reason_id?: string | null;
 
@@ -4003,6 +4008,7 @@ export declare namespace Subscriptions {
     type SubscriptionCreateParams as SubscriptionCreateParams,
     type SubscriptionListParams as SubscriptionListParams,
     type SubscriptionCancelParams as SubscriptionCancelParams,
+    type SubscriptionGeneratePortalLinkParams as SubscriptionGeneratePortalLinkParams,
     type SubscriptionPauseParams as SubscriptionPauseParams,
     type SubscriptionRescheduleParams as SubscriptionRescheduleParams,
     type SubscriptionResumeParams as SubscriptionResumeParams,

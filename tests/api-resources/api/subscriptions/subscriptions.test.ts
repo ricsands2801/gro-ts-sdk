@@ -167,6 +167,18 @@ describe('resource subscriptions', () => {
   });
 
   // Mock server tests are disabled
+  test.skip('generatePortalLink: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.api.subscriptions.generatePortalLink(
+        'id',
+        { expiry_days: 21 },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Gro.NotFoundError);
+  });
+
+  // Mock server tests are disabled
   test.skip('getRescheduleOptions', async () => {
     const responsePromise = client.api.subscriptions.getRescheduleOptions('id');
     const rawResponse = await responsePromise.asResponse();

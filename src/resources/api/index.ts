@@ -42,6 +42,7 @@ export {
   type SubscriptionCreateParams,
   type SubscriptionListParams,
   type SubscriptionCancelParams,
+  type SubscriptionGeneratePortalLinkParams,
   type SubscriptionPauseParams,
   type SubscriptionRescheduleParams,
   type SubscriptionResumeParams,

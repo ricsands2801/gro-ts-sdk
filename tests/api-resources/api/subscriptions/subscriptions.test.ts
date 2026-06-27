@@ -172,7 +172,11 @@ describe('resource subscriptions', () => {
     await expect(
       client.api.subscriptions.generatePortalLink(
         'id',
-        { expiry_days: 21 },
+        {
+          expiry_days: 21,
+          short_link: true,
+          tab: 'tab',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Gro.NotFoundError);

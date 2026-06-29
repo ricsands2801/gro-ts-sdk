@@ -65,6 +65,7 @@ describe('resource subscriptions', () => {
       profile_id: 'profile_id',
       shopify_payment_method_id: 'shopify_payment_method_id',
       delivery_address_id: 'delivery_address_id',
+      delivery_amount: 0,
       delivery_slot_id: 'delivery_slot_id',
       note: 'note',
       notify_customer: true,

@@ -3831,6 +3831,8 @@ export interface SubscriptionCreateParams {
 
   delivery_address_id?: string | null;
 
+  delivery_amount?: number | null;
+
   delivery_slot_id?: string | null;
 
   note?: string | null;

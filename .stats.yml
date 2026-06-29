@@ -1,4 +1,4 @@
 configured_endpoints: 52
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/gro/gro-ac23e0fe5ba5856bd51c8c04f11ae25d195610ff6fa5c14ac4e6d8e5fddced1d.yml
-openapi_spec_hash: c80519827809e71254bd85c73726a7bd
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/gro/gro-8311f04ee63befc837b5771cebee4879f4dcbf451f7673ad46f345b2ec586e19.yml
+openapi_spec_hash: e7109471327946374022b31e94aa284b
 config_hash: 74ba7fb688d5360a0150ec641e3f99c4

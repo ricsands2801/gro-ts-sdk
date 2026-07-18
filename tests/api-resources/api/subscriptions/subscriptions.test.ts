@@ -121,6 +121,7 @@ describe('resource subscriptions', () => {
           sort_by: 'created_at',
           sort_order: 'asc',
           status: 'status',
+          validation: 'validation',
         },
         { path: '/_stainless_unknown_path' },
       ),

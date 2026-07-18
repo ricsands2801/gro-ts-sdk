@@ -3926,6 +3926,8 @@ export interface SubscriptionListParams {
   sort_order?: 'asc' | 'desc';
 
   status?: string;
+
+  validation?: string;
 }
 
 export interface SubscriptionCancelParams {

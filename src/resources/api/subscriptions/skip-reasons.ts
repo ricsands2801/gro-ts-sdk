@@ -120,7 +120,21 @@ export namespace SkipReasonCreateResponse {
 
     description?: string | null;
 
+    playbook?: Data.Playbook | null;
+
+    playbook_id?: string | null;
+
     updated_at?: string | null;
+  }
+
+  export namespace Data {
+    export interface Playbook {
+      id?: string;
+
+      name?: string;
+
+      status?: 'draft' | 'active' | 'paused' | 'archived';
+    }
   }
 }
 
@@ -144,7 +158,21 @@ export namespace SkipReasonRetrieveResponse {
 
     description?: string | null;
 
+    playbook?: Data.Playbook | null;
+
+    playbook_id?: string | null;
+
     updated_at?: string | null;
+  }
+
+  export namespace Data {
+    export interface Playbook {
+      id?: string;
+
+      name?: string;
+
+      status?: 'draft' | 'active' | 'paused' | 'archived';
+    }
   }
 }
 
@@ -168,7 +196,21 @@ export namespace SkipReasonUpdateResponse {
 
     description?: string | null;
 
+    playbook?: Data.Playbook | null;
+
+    playbook_id?: string | null;
+
     updated_at?: string | null;
+  }
+
+  export namespace Data {
+    export interface Playbook {
+      id?: string;
+
+      name?: string;
+
+      status?: 'draft' | 'active' | 'paused' | 'archived';
+    }
   }
 }
 
@@ -195,7 +237,21 @@ export namespace SkipReasonListResponse {
 
       description?: string | null;
 
+      playbook?: Data.Playbook | null;
+
+      playbook_id?: string | null;
+
       updated_at?: string | null;
+    }
+
+    export namespace Data {
+      export interface Playbook {
+        id?: string;
+
+        name?: string;
+
+        status?: 'draft' | 'active' | 'paused' | 'archived';
+      }
     }
   }
 }
@@ -211,6 +267,8 @@ export interface SkipReasonCreateParams {
 
   is_active?: boolean;
 
+  playbook_id?: string | null;
+
   position?: number;
 }
 
@@ -220,6 +278,8 @@ export interface SkipReasonUpdateParams {
   is_active?: boolean;
 
   label?: string;
+
+  playbook_id?: string | null;
 
   position?: number;
 }

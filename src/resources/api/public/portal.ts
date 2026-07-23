@@ -49,7 +49,21 @@ export namespace PortalListSkipReasonsResponse {
 
       description?: string | null;
 
+      playbook?: Data.Playbook | null;
+
+      playbook_id?: string | null;
+
       updated_at?: string | null;
+    }
+
+    export namespace Data {
+      export interface Playbook {
+        id?: string;
+
+        name?: string;
+
+        status?: 'draft' | 'active' | 'paused' | 'archived';
+      }
     }
   }
 }

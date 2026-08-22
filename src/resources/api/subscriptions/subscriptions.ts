@@ -401,6 +401,8 @@ export namespace SubscriptionRetrieveResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -444,6 +446,10 @@ export namespace SubscriptionRetrieveResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -699,6 +705,8 @@ export namespace SubscriptionListResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     status: 'ACTIVE' | 'PAUSED' | 'CANCELLED' | 'EXPIRED' | 'PAYMENT_FAILED';
@@ -722,6 +730,10 @@ export namespace SubscriptionListResponse {
     entity?: string | Data.UnionMember1;
 
     last_order?: Data.LastOrder | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     next_billing_date?: string | null;
 
@@ -1056,6 +1068,8 @@ export namespace SubscriptionCancelResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -1099,6 +1113,10 @@ export namespace SubscriptionCancelResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -1424,6 +1442,8 @@ export namespace SubscriptionPauseResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -1467,6 +1487,10 @@ export namespace SubscriptionPauseResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -1728,6 +1752,8 @@ export namespace SubscriptionReactivateResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -1771,6 +1797,10 @@ export namespace SubscriptionReactivateResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -2032,6 +2062,8 @@ export namespace SubscriptionRescheduleResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2075,6 +2107,10 @@ export namespace SubscriptionRescheduleResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -2336,6 +2372,8 @@ export namespace SubscriptionResumeResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2379,6 +2417,10 @@ export namespace SubscriptionResumeResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -2652,6 +2694,8 @@ export namespace SubscriptionSkipResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2695,6 +2739,10 @@ export namespace SubscriptionSkipResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -2956,6 +3004,8 @@ export namespace SubscriptionUpdateBillingDateResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2999,6 +3049,10 @@ export namespace SubscriptionUpdateBillingDateResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -3260,6 +3314,8 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -3303,6 +3359,10 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 
@@ -3564,6 +3624,8 @@ export namespace SubscriptionUpdateFrequencyResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -3607,6 +3669,10 @@ export namespace SubscriptionUpdateFrequencyResponse {
     entity_label?: string | null;
 
     last_order?: string | null;
+
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
 
     migration_source_ref?: string | null;
 

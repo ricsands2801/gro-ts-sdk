@@ -401,7 +401,7 @@ export namespace SubscriptionRetrieveResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -705,7 +705,7 @@ export namespace SubscriptionListResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -1068,7 +1068,7 @@ export namespace SubscriptionCancelResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -1442,7 +1442,7 @@ export namespace SubscriptionPauseResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -1752,7 +1752,7 @@ export namespace SubscriptionReactivateResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -2062,7 +2062,7 @@ export namespace SubscriptionRescheduleResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -2372,7 +2372,7 @@ export namespace SubscriptionResumeResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -2694,7 +2694,7 @@ export namespace SubscriptionSkipResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -3004,7 +3004,7 @@ export namespace SubscriptionUpdateBillingDateResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -3314,7 +3314,7 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 
@@ -3624,7 +3624,7 @@ export namespace SubscriptionUpdateFrequencyResponse {
 
     number: string;
 
-    payment_reminder_status: 'sent' | 'not-applicable' | 'not-due' | 'not-sent';
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
 
     profile_id: string;
 

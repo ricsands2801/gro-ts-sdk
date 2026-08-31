@@ -844,7 +844,7 @@ export namespace SubscriptionListResponse {
 
       shopify_order_id?: string;
 
-      shopify_order_number?: string | null;
+      shopify_order_number?: number | null;
 
       status?: 'PENDING' | 'PAID' | 'PARTIALLY_REFUNDED' | 'REFUNDED' | 'CANCELLED';
 

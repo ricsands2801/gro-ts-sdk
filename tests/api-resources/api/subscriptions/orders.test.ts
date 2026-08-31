@@ -52,7 +52,7 @@ describe('resource orders', () => {
           production_date_to: 'production_date_to',
           profile_id: 'profile_id',
           search: 'search',
-          sort_by: 'created_at',
+          sort_by: 'shopify_order_number',
           sort_order: 'asc',
           status: 'PENDING',
           subscription_id: 'subscription_id',

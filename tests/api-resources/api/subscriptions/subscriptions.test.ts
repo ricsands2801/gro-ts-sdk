@@ -65,6 +65,7 @@ describe('resource subscriptions', () => {
       profile_id: 'profile_id',
       shopify_payment_method_id: 'shopify_payment_method_id',
       delivery_address_id: 'delivery_address_id',
+      delivery_amount: 0,
       delivery_slot_id: 'delivery_slot_id',
       note: 'note',
       notify_customer: true,
@@ -120,6 +121,7 @@ describe('resource subscriptions', () => {
           sort_by: 'created_at',
           sort_order: 'asc',
           status: 'status',
+          validation: 'validation',
         },
         { path: '/_stainless_unknown_path' },
       ),
@@ -167,6 +169,22 @@ describe('resource subscriptions', () => {
   });
 
   // Mock server tests are disabled
+  test.skip('generatePortalLink: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.api.subscriptions.generatePortalLink(
+        'id',
+        {
+          expiry_days: 21,
+          short_link: true,
+          tab: 'tab',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Gro.NotFoundError);
+  });
+
+  // Mock server tests are disabled
   test.skip('getRescheduleOptions', async () => {
     const responsePromise = client.api.subscriptions.getRescheduleOptions('id');
     const rawResponse = await responsePromise.asResponse();
@@ -194,7 +212,11 @@ describe('resource subscriptions', () => {
   test.skip('pause: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.api.subscriptions.pause('id', { reason: 'reason' }, { path: '/_stainless_unknown_path' }),
+      client.api.subscriptions.pause(
+        'id',
+        { pause_reason_id: 'pause_reason_id', reason: 'reason' },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Gro.NotFoundError);
   });
 

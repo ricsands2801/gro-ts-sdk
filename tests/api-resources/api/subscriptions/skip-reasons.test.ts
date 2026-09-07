@@ -26,6 +26,7 @@ describe('resource skipReasons', () => {
       label: 'x',
       description: 'description',
       is_active: true,
+      playbook_id: 'playbook_id',
       position: 0,
     });
   });
@@ -64,6 +65,7 @@ describe('resource skipReasons', () => {
           description: 'description',
           is_active: true,
           label: 'x',
+          playbook_id: 'playbook_id',
           position: 0,
         },
         { path: '/_stainless_unknown_path' },

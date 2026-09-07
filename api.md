@@ -59,7 +59,7 @@ Methods:
 - <code title="get /api/subscriptions/{id}">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">retrieve</a>(id) -> SubscriptionRetrieveResponse</code>
 - <code title="get /api/subscriptions">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">list</a>({ ...params }) -> SubscriptionListResponse</code>
 - <code title="post /api/subscriptions/{id}/cancel">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">cancel</a>(id, { ...params }) -> SubscriptionCancelResponse</code>
-- <code title="post /api/subscriptions/{id}/portal-link">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">generatePortalLink</a>(id) -> SubscriptionGeneratePortalLinkResponse</code>
+- <code title="post /api/subscriptions/{id}/portal-link">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">generatePortalLink</a>(id, { ...params }) -> SubscriptionGeneratePortalLinkResponse</code>
 - <code title="get /api/subscriptions/{id}/reschedule-options">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">getRescheduleOptions</a>(id) -> SubscriptionGetRescheduleOptionsResponse</code>
 - <code title="post /api/subscriptions/{id}/pause">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">pause</a>(id, { ...params }) -> SubscriptionPauseResponse</code>
 - <code title="post /api/subscriptions/{id}/reactivate">client.api.subscriptions.<a href="./src/resources/api/subscriptions/subscriptions.ts">reactivate</a>(id) -> SubscriptionReactivateResponse</code>

@@ -85,7 +85,7 @@ export namespace OrderRetrieveResponse {
 
     profile_id?: string | null;
 
-    shopify_order_number?: string | null;
+    shopify_order_number?: number | null;
 
     subscriptions?: string | Array<unknown>;
 
@@ -217,7 +217,7 @@ export namespace OrderListResponse {
 
     profile_id?: string | null;
 
-    shopify_order_number?: string | null;
+    shopify_order_number?: number | null;
 
     subscriptions?: string | Array<unknown>;
 
@@ -373,7 +373,7 @@ export interface OrderListParams {
 
   search?: string;
 
-  sort_by?: 'created_at' | 'delivery_date' | 'billing_date' | 'total' | 'status';
+  sort_by?: 'shopify_order_number' | 'created_at' | 'delivery_date' | 'billing_date' | 'total' | 'status';
 
   sort_order?: 'asc' | 'desc';
 

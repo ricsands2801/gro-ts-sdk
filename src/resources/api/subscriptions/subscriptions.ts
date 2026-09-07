@@ -122,8 +122,12 @@ export class Subscriptions extends APIResource {
   /**
    * Generates a one-time magic login link that authenticates the subscription owner
    * directly into the customer portal for the given subscription. Returns a
-   * customer-facing link and an admin-impersonation link, both expiring after 7
-   * days.
+   * customer-facing link and an admin-impersonation link. Pass `expiry_days`
+   * (max 21) to control how long the links stay valid; defaults to 7 days. Pass
+   * `short_link: true` to also receive a branded gro1.io short link for the
+   * customer-facing link (`short_portal_link`); omitted by default. The
+   * admin-impersonation link is never shortened. Pass `tab` to deep-link the portal
+   * to a specific tab (appended as `&tab=<value>`).
    *
    * @example
    * ```ts
@@ -133,9 +137,10 @@ export class Subscriptions extends APIResource {
    */
   generatePortalLink(
     id: string,
+    body: SubscriptionGeneratePortalLinkParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<SubscriptionGeneratePortalLinkResponse> {
-    return this._client.post(path`/api/subscriptions/${id}/portal-link`, options);
+    return this._client.post(path`/api/subscriptions/${id}/portal-link`, { body, ...options });
   }
 
   /**
@@ -396,6 +401,8 @@ export namespace SubscriptionRetrieveResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -440,6 +447,10 @@ export namespace SubscriptionRetrieveResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -452,7 +463,11 @@ export namespace SubscriptionRetrieveResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -690,6 +705,8 @@ export namespace SubscriptionListResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     status: 'ACTIVE' | 'PAUSED' | 'CANCELLED' | 'EXPIRED' | 'PAYMENT_FAILED';
@@ -714,6 +731,10 @@ export namespace SubscriptionListResponse {
 
     last_order?: Data.LastOrder | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     next_billing_date?: string | null;
 
     next_delivery_date?: string | null;
@@ -721,6 +742,8 @@ export namespace SubscriptionListResponse {
     next_production_date?: string | null;
 
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -821,7 +844,7 @@ export namespace SubscriptionListResponse {
 
       shopify_order_id?: string;
 
-      shopify_order_number?: string | null;
+      shopify_order_number?: number | null;
 
       status?: 'PENDING' | 'PAID' | 'PARTIALLY_REFUNDED' | 'REFUNDED' | 'CANCELLED';
 
@@ -1045,6 +1068,8 @@ export namespace SubscriptionCancelResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -1089,6 +1114,10 @@ export namespace SubscriptionCancelResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -1101,7 +1130,11 @@ export namespace SubscriptionCancelResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -1313,6 +1346,12 @@ export interface SubscriptionGeneratePortalLinkResponse {
    * Customer-facing magic login link to the subscription portal
    */
   portal_link: string;
+
+  /**
+   * Branded gro1.io short link that redirects to portal_link. Only present when
+   * short_link=true was requested
+   */
+  short_portal_link?: string;
 }
 
 export interface SubscriptionGetRescheduleOptionsResponse {
@@ -1403,6 +1442,8 @@ export namespace SubscriptionPauseResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -1447,6 +1488,10 @@ export namespace SubscriptionPauseResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -1459,7 +1504,11 @@ export namespace SubscriptionPauseResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -1703,6 +1752,8 @@ export namespace SubscriptionReactivateResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -1747,6 +1798,10 @@ export namespace SubscriptionReactivateResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -1759,7 +1814,11 @@ export namespace SubscriptionReactivateResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -2003,6 +2062,8 @@ export namespace SubscriptionRescheduleResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2047,6 +2108,10 @@ export namespace SubscriptionRescheduleResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -2059,7 +2124,11 @@ export namespace SubscriptionRescheduleResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -2303,6 +2372,8 @@ export namespace SubscriptionResumeResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2347,6 +2418,10 @@ export namespace SubscriptionResumeResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -2359,7 +2434,11 @@ export namespace SubscriptionResumeResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -2615,6 +2694,8 @@ export namespace SubscriptionSkipResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2659,6 +2740,10 @@ export namespace SubscriptionSkipResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -2671,7 +2756,11 @@ export namespace SubscriptionSkipResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -2915,6 +3004,8 @@ export namespace SubscriptionUpdateBillingDateResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -2959,6 +3050,10 @@ export namespace SubscriptionUpdateBillingDateResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -2971,7 +3066,11 @@ export namespace SubscriptionUpdateBillingDateResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -3215,6 +3314,8 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -3259,6 +3360,10 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -3271,7 +3376,11 @@ export namespace SubscriptionUpdateDeliveryInstructionsResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -3515,6 +3624,8 @@ export namespace SubscriptionUpdateFrequencyResponse {
 
     number: string;
 
+    payment_reminder_status: 'sent' | 'pending' | 'not-applicable' | 'not-due' | 'not-sent';
+
     profile_id: string;
 
     shipping_amount: number;
@@ -3559,6 +3670,10 @@ export namespace SubscriptionUpdateFrequencyResponse {
 
     last_order?: string | null;
 
+    last_payment_reminder_billing_date?: string | null;
+
+    last_payment_reminder_sent_at?: string | null;
+
     migration_source_ref?: string | null;
 
     next_billing_date?: string | null;
@@ -3571,7 +3686,11 @@ export namespace SubscriptionUpdateFrequencyResponse {
 
     pause_reason?: string | null;
 
+    pause_reason_id?: string | null;
+
     paused_at?: string | null;
+
+    payment_day_of_week?: number | null;
 
     payment_method_brand?: string | null;
 
@@ -3778,6 +3897,8 @@ export interface SubscriptionCreateParams {
 
   delivery_address_id?: string | null;
 
+  delivery_amount?: number | null;
+
   delivery_slot_id?: string | null;
 
   note?: string | null;
@@ -3871,6 +3992,8 @@ export interface SubscriptionListParams {
   sort_order?: 'asc' | 'desc';
 
   status?: string;
+
+  validation?: string;
 }
 
 export interface SubscriptionCancelParams {
@@ -3881,7 +4004,17 @@ export interface SubscriptionCancelParams {
   silent?: boolean;
 }
 
+export interface SubscriptionGeneratePortalLinkParams {
+  expiry_days?: number;
+
+  short_link?: boolean;
+
+  tab?: string;
+}
+
 export interface SubscriptionPauseParams {
+  pause_reason_id?: string | null;
+
   reason?: string;
 }
 
@@ -3959,6 +4092,7 @@ export declare namespace Subscriptions {
     type SubscriptionCreateParams as SubscriptionCreateParams,
     type SubscriptionListParams as SubscriptionListParams,
     type SubscriptionCancelParams as SubscriptionCancelParams,
+    type SubscriptionGeneratePortalLinkParams as SubscriptionGeneratePortalLinkParams,
     type SubscriptionPauseParams as SubscriptionPauseParams,
     type SubscriptionRescheduleParams as SubscriptionRescheduleParams,
     type SubscriptionResumeParams as SubscriptionResumeParams,

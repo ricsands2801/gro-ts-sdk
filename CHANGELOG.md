@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.7.0 (2026-09-07)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* **api:** api update ([7569552](https://github.com/ricsands2801/gro-ts-sdk/commit/756955232b2ab2848bb6cbcd3e05160cbb267b18))
+* **api:** api update ([8c7ed7b](https://github.com/ricsands2801/gro-ts-sdk/commit/8c7ed7bd16b045fdb11ab10b0c0a873e8652cfc6))
+* **api:** api update ([d9b2e0c](https://github.com/ricsands2801/gro-ts-sdk/commit/d9b2e0cf56d5f94b32151bb0e1aa3d6b6b5e86da))
+* **api:** api update ([26e2344](https://github.com/ricsands2801/gro-ts-sdk/commit/26e2344fbcf8efedc8a046ebe2c70b30d8d24bae))
+* **api:** api update ([4536878](https://github.com/ricsands2801/gro-ts-sdk/commit/45368781b9cbb0544d24436b184c283841c501b0))
+* **api:** api update ([9f48b66](https://github.com/ricsands2801/gro-ts-sdk/commit/9f48b66bbdf980e1d9d052365e4b9f6af83f39bf))
+* **api:** api update ([da4f149](https://github.com/ricsands2801/gro-ts-sdk/commit/da4f149c188ef020e7f714bb4f46029ec0208b82))
+* **api:** api update ([a7662ab](https://github.com/ricsands2801/gro-ts-sdk/commit/a7662abebe608ffaa5114e850a9a6654ed59a59d))
+* **api:** api update ([33128c5](https://github.com/ricsands2801/gro-ts-sdk/commit/33128c598ee19504ea6ed4fa841cd27959d3c02a))
+* **api:** api update ([897cd2b](https://github.com/ricsands2801/gro-ts-sdk/commit/897cd2b36474030bb1049ae4ad9ce2d2ca96c7cf))
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([d117a1e](https://github.com/ricsands2801/gro-ts-sdk/commit/d117a1ec617f6c01b66e86dc9033d1697c94c05f))
+
+
+### Bug Fixes
+
+* **ci:** bump @arethetypeswrong/cli to ^0.18.0 and run CI workflows on Node 24 ([3c7d5c8](https://github.com/ricsands2801/gro-ts-sdk/commit/3c7d5c83d7708f5353a864a92417a1a236383480))
+* **client:** send content-type header for requests with an omitted optional body ([af34359](https://github.com/ricsands2801/gro-ts-sdk/commit/af3435946e8e5cb578780707f34182d5acca8085))
+
 ## 0.6.0 (2026-05-30)
 
 Full Changelog: [v0.5.1...v0.6.0](https://github.com/ricsands2801/gro-ts-sdk/compare/v0.5.1...v0.6.0)
